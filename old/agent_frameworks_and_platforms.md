@@ -1,0 +1,51 @@
+# 🏢 Standalone Agent Frameworks & Platforms
+
+This file contains platforms, multi-agent frameworks, and complex orchestration solutions that are standalone.
+
+- [Example Resource Name](./resources/example-resource.md) - [Briefly describe the resource, e.g., "Internal style guide for Python projects"]
+- [Council of High Intelligence](https://github.com/0xNyk/council-of-high-intelligence) - Framework multi-agente
+- [EpicStaff](https://github.com/EpicStaff/EpicStaff) - Piattaforma self-hosted per costruire flussi di agenti AI
+- [PraisonAI](https://github.com/MervinPraison/PraisonAI) - Framework multi-agente per automazione
+- [Agent Reach](https://github.com/Panniantong/Agent-Reach) - Framework per l'espansione delle capacità degli agenti
+- [OpenMAIC](https://github.com/THU-MAIC/OpenMAIC) - Piattaforma e framework open source per AI
+- [GOD](https://github.com/XiaoLuoLYG/GOD) - Framework sperimentale per agenti
+- [Hivemind](https://github.com/activeloopai/hivemind) - Framework decentralizzato per AI
+- [Bytechef](https://github.com/bytechefhq/bytechef) - Piattaforma e harness per workflow agentici
+- [Agentic Inbox](https://github.com/cloudflare/agentic-inbox) - Tool di gestione flussi agentici
+- [Agency Agents](https://github.com/msitarzewski/agency-agents) - Framework per agenzie di agenti AI
+- [Omnigent](https://github.com/omnigent-ai/omnigent) - Framework agentico universale
+- [Ouroboros](https://github.com/razzant/ouroboros) - Framework di esecuzione ciclica e autonoma
+- [Ruflo](https://github.com/ruvnet/ruflo?utm_source=chatgpt.com) - Framework per flussi di lavoro AI
+- [OpenFugu](https://github.com/trotsky1997/OpenFugu) - Framework agentico Open Source
+- [Clowder AI](https://github.com/zts212653/clowder-ai) - Framework multi-agente
+- [Paperclip](https://github.com/paperclipai/paperclip) - Framework e harness agentico
+- [GStack](https://github.com/garrytan/gstack) - Stack e framework di sviluppo AI
+- [AutoResearch](https://github.com/karpathy/autoresearch) - Framework per ricerca automatizzata
+- [Midday](https://github.com/midday-ai/midday) - Piattaforma operativa e framework AI
+- [jcode](https://github.com/1jehuang/jcode) - Tool e ambiente di sviluppo
+- [Claude Scholar](https://github.com/Galaxy-Dawn/claude-scholar) - Tool per ricerca accademica con Claude
+- [Claw Empire](https://github.com/GreenSheep01201/claw-empire) - Progetto di test e orchestrazione AI
+- [AI Job Search](https://github.com/MadsLorentzen/ai-job-search) - Automazione per ricerca lavoro tramite AI
+- [OpenOSINT](https://github.com/OpenOSINT/OpenOSINT) - Tool OSINT integrato con AI
+- [Alexandrie](https://github.com/Smaug6739/Alexandrie) - Gestore di librerie e memoria per AI
+- [OpenKB](https://github.com/VectifyAI/OpenKB) - Knowledge Base open source per RAG
+- [PageIndex](https://github.com/VectifyAI/PageIndex) - Strumento di indicizzazione vettoriale
+- [Agentic AI Landscape](https://github.com/antgroup/agentic-ai-landscape) - Mappa e raccolta dell'ecosistema agentico
+- [Crucix](https://github.com/calesthio/Crucix) - Tool sperimentale
+- [OpenMontage](https://github.com/calesthio/OpenMontage) - Tool per manipolazione media
+- [Headroom](https://github.com/headroomlabs-ai/headroom) - Piattaforma AI integrata
+- [SciWrite](https://github.com/labarba/sciwrite) - Tool AI per scrittura scientifica
+- [Open Notebook](https://github.com/lfnovo/open-notebook) - Ambiente di notebook sperimentale
+- [Guild](https://github.com/mathomhaus/guild) - Sistema di orchestrazione task
+- [Memanto](https://github.com/moorcheh-ai/memanto) - Tool di memorizzazione AI
+- [CLI Printing Press](https://github.com/mvanhorn/cli-printing-press) - Automazione per pubblicazione via terminale
+- [OpenDataLoader PDF](https://github.com/opendataloader-project/opendataloader-pdf) - Estrattore di testo da PDF per RAG
+- [Heretic](https://github.com/p-e-w/heretic) - Tool e framework sperimentale
+- [Odysseus](https://github.com/pewdiepie-archdaemon/odysseus) - Tool di navigazione autonoma per agenti
+- [AI Engineering From Scratch](https://github.com/rohitg00/ai-engineering-from-scratch) - Guida e codice per l'ingegneria AI
+- [TDoc](https://github.com/serenakeyitan/tdoc) - Strumento di generazione documentazione
+- [Supertonic](https://github.com/supertone-inc/supertonic) - Tool AI per l'audio
+- [https://pinperepette.github.io/signal.pirate/articoli/l-agente-non-ha-una-forma.html?t=d](https://pinperepette.github.io/signal.pirate/articoli/l-agente-non-ha-una-forma.html?t=d) - Articolo: L'Agente non ha una forma
+- [https://www.langchain.com/blog/the-anatomy-of-an-agent-harness#can-someone-please-define-a-harness](https://www.langchain.com/blog/the-anatomy-of-an-agent-harness#can-someone-please-define-a-harness) - Articolo che definisce Agent Harness
+- [https://www.smartworld.it/news/gemini-memoria-persistente-import-chat-chatgpt-claude.html](https://www.smartworld.it/news/gemini-memoria-persistente-import-chat-chatgpt-claude.html) - Articolo: Gemini porta la memoria persistente in Italia e permette di importare le chat da ChatGPT e Claude
+- [https://agentsfromscratch.com/](https://agentsfromscratch.com/) - Learn to build AI agents locally without frameworks
