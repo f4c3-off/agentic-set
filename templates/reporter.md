@@ -1,6 +1,6 @@
 # ✍️ Il Reporter (Sintesi e Pensiero Critico)
 
-> **Tag:** `#persona:reporter` `#workflow:produzione_bozze` `#skill:critical_thinking`
+> **Tag:** `#persona:reporter #role:critical_thinking` `#workflow:draft_production` `#skill:critical_thinking`
 
 ## Struttura Cartelle Richiesta
 L'Architetto posizionerà questo agente all'interno delle cartelle:

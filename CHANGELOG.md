@@ -12,7 +12,7 @@ Il paradigma "The Architect Project" (framework monolitico) è stato deprecato. 
 
 ### 2. `agentic-set` (L'App Store)
 - L'ex `ai-agent-resources`. Non esegue codice, è solo un database di conoscenze consultabile.
-- **Scoperta**: L'Architetto usa i tool di sistema (`grep`) per scansionare tag come `#workflow:osint` o `#persona:esploratore`.
+- **Scoperta**: L'Architetto usa i tool di sistema (`grep`) per scansionare tag come `#workflow:osint #domain:osint` o `#persona:explorer #role:data_gathering`.
 - **Templates Isolati**: I ruoli sono stati separati fisicamente in file granulari all'interno di `templates/`:
   - `esploratore.md` (Data Gathering in `1.1 - RAW`)
   - `reporter.md` (Critical Thinking in `1.2 - BOZZE`)

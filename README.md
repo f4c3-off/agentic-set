@@ -7,7 +7,7 @@
 ---
 
 ## 🗺️ Global Navigation Map
-Every file in this repository is not a simple list of links, but a **decision manual** indexed by tags (e.g., `#workflow:osint`). The Architect scans these files to inject intelligence into its sub-agents.
+Every file in this repository is not a simple list of links, but a **decision manual** indexed by tags (e.g., `#workflow:osint #domain:osint`). The Architect scans these files to inject intelligence into its sub-agents.
 
 If you need:
 

@@ -4,7 +4,7 @@ This document defines the architectural and stylistic standards for the generati
 
 ---
 
-## 1. The "OKF" Standard (Open Knowledge Format) `#workflow:standard_okf` `#workflow:formattazione`
+## 1. The "OKF" Standard (Open Knowledge Format) `#workflow:okf_standard` `#workflow:formatting`
 
 OKF is an interoperability standard designed to enable seamless dialogue between original Markdown, Graph-RAG indexing engines, and agents.
 

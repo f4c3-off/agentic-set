@@ -1,6 +1,6 @@
 # 🕵️ ICM Workflow: OSINT & Knowledge Factory
 
-> **Discovery Tags:** `#workflow:osint` `#workflow:ricerca_analitica` `#archetipo:intelligence`
+> **Discovery Tags:** `#workflow:osint #domain:osint` `#workflow:analytical_research #domain:osint` `#archetype:intelligence`
 
 This document contains the exact blueprints for building the Analytical Research pipeline. **The Architect** reads this file to know which physical folders to create and which Prompts (Identities) to inject into the `CONTEXT.md` files of the sub-agents.
 

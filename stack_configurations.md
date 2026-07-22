@@ -7,7 +7,7 @@ The Architect, after the Triage interview, identifies which of these Archetypes 
 ---
 
 ## Archetype 1: Intelligence & Academy OS (Knowledge Base)
-- **Tag**: `#tipo:knowledge_base`, `#tipo:ricerca_analitica`
+- **Tag**: `#archetype:knowledge_base #purpose:research`, `#archetype:analytical_research #purpose:research`
 - **Objective**: Build an autonomous "Second Brain" for deep research, academic paper ingestion, OSINT, and the generation of wikis or courses.
 - **Pipeline (ICM Folders)**:
   - `0 - SYSTEM/`
@@ -27,11 +27,11 @@ The Architect, after the Triage interview, identifies which of these Archetypes 
   - **Critic**: Applies the `analyze_claims` (Fabric) pattern to find logical fallacies in documents in `ANALYSIS`.
   - **Librarian**: Operates in `WIKI/` to connect the dots, update indices (MOC), and compile the glossary.
 - **Skill Discovery Tags (Dynamic Tool Search)**: 
-  - `Tags to search`: `#workflow:osint`, `#workflow:ricerca_analitica`, `#workflow:knowledge_base`, `#workflow:ingestion_raw`
+  - `Tags to search`: `#workflow:osint #domain:osint`, `#workflow:analytical_research #domain:osint`, `#workflow:knowledge_base`, `#workflow:raw_ingestion`
   - `Source repository`: [https://github.com/f4c3-off/agentic-set](https://github.com/f4c3-off/agentic-set)
 
 ## Archetype 2: Operational Pipeline (Code & Dev)
-- **Tag**: `#tipo:sviluppo_software`, `#tipo:pipeline_operativa`
+- **Tag**: `#archetype:software_development #purpose:engineering`, `#archetype:operational_pipeline #purpose:automation`
 - **Objective**: Iterative generation and validation of code, scripts, or engineering projects.
 - **Pipeline (ICM Folders)**:
   - `0 - SYSTEM/`
@@ -50,7 +50,7 @@ The Architect, after the Triage interview, identifies which of these Archetypes 
   - `jcode` (Rust code executor)
 
 ## Archetype 3: Audit & Security
-- **Tag**: `#tipo:cybersecurity`, `#tipo:audit`
+- **Tag**: `#archetype:cybersecurity #purpose:audit`, `#purpose:audit`
 - **Objective**: System scanning, vulnerability analysis, and risk reporting.
 - **Pipeline (ICM Folders)**:
   - `0 - SYSTEM/`
@@ -67,3 +67,23 @@ The Architect, after the Triage interview, identifies which of these Archetypes 
 - **Suggested Core Skills & Tools**:
   - `OWASP OSINT Agent` 
   - `Fabric (create_threat_model)`
+
+## Archetype 4: Business Operations & Management (ERP/CRM OS)
+- **Tag**: `#archetype:business_operations`, `#purpose:management`, `#domain:administration`
+- **Objective**: Manage daily business operations, clients, logistics, inventory, and automated communications for small businesses or non-profits.
+- **Pipeline (ICM Folders)**:
+  - `0 - SYSTEM/`
+    - `0.1 - RULES/`
+    - `0.2 - SKILLS/`
+      - `tmp/`
+  - `1 - INBOX/` (Raw client emails, invoices, schedules, intake forms)
+  - `2 - OPERATIONS/` (Task management, logistics, inventory updates, processing)
+  - `3 - RECORDS/` (Permanent client files, patient records, member subscriptions)
+  - `4 - OUTBOX/` (Drafted emails, tax summaries, marketing copy ready for approval)
+- **Workflows (Generated Sub-Agents)**:
+  - **Processor**: Ingests files from `INBOX/`, verifies completeness, and organizes them into `RECORDS/` or flags them for `OPERATIONS/`.
+  - **Manager**: Monitors `OPERATIONS/`, runs daily checks on inventory or schedules, and triggers the generation of outbound documents.
+  - **Communicator**: Drafts CRM emails, reports, or social media copy in `OUTBOX/` based on operational changes.
+- **Suggested Core Skills & Tools**:
+  - `Google Workspace MCP` (for Calendar and Gmail integration)
+  - `CSV/Excel Processing Skill`

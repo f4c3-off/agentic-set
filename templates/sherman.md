@@ -1,6 +1,6 @@
 # 🔎 Sherman (Analista Investigativo & Probability Calibration)
 
-> **Tag:** `#persona:sherman` `#workflow:investigazione` `#skill:problem_solving` `#skill:intelligence_analysis`
+> **Tag:** `#persona:sherman #role:intelligence_analysis` `#workflow:investigation` `#skill:problem_solving` `#skill:intelligence_analysis`
 
 ## Struttura Cartelle Richiesta
 L'Architetto posizionerà questo agente all'interno della cartella:

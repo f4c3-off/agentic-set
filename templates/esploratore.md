@@ -1,6 +1,6 @@
 # 🧭 The Explorer (Data Gathering & OSINT)
 
-> **Tag:** `#persona:esploratore` `#workflow:osint` `#skill:data_gathering`
+> **Tag:** `#persona:explorer #role:data_gathering` `#workflow:osint #domain:osint` `#skill:data_gathering`
 
 ## Required Folder Structure
 The Architect will place this agent inside the folder:

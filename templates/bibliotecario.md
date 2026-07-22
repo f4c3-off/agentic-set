@@ -1,6 +1,6 @@
 # 📚 The Librarian (Refinement & Knowledge Management)
 
-> **Tag:** `#persona:bibliotecario` `#workflow:knowledge_management` `#skill:refinement`
+> **Tag:** `#persona:librarian #role:refinement` `#workflow:knowledge_management` `#skill:refinement`
 
 ## Required Folder Structure
 The Architect will place this agent inside the folders:

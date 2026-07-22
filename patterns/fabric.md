@@ -8,7 +8,7 @@ The Architect can read these patterns and paste them directly into the `CONTEXT.
 ---
 
 ## 1. Extract Wisdom
-- **Tag**: `#workflow:sintesi`, `#workflow:ricerca_analitica`, `#analisi_dati`
+- **Tag**: `#workflow:synthesis`, `#workflow:analytical_research #domain:osint`, `#skill:data_analysis`
 - **Description**: The definitive pattern for extracting insights, core ideas, and quotes from long texts (podcasts, papers, video transcripts).
 - **Prompt (to inject)**:
 ```markdown
@@ -25,7 +25,7 @@ OUTPUT RULES (OKF Standard):
 ```
 
 ## 2. Analyze Claims
-- **Tag**: `#workflow:fact_checking`, `#workflow:osint`, `#workflow:audit`
+- **Tag**: `#workflow:fact_checking`, `#workflow:osint #domain:osint`, `#workflow:audit`
 - **Description**: Perfect for the "Critic" Sub-Agent. Analyzes a text looking for unsupported claims, biases, and logical fallacies.
 - **Prompt (to inject)**:
 ```markdown
@@ -41,7 +41,7 @@ OUTPUT RULES:
 ```
 
 ## 3. Create Threat Model
-- **Tag**: `#workflow:sicurezza`, `#workflow:audit`
+- **Tag**: `#workflow:security`, `#workflow:audit`
 - **Description**: To be used for Cybersecurity pipelines or for analyzing business/logistical risks.
 - **Prompt (to inject)**:
 ```markdown
@@ -57,7 +57,7 @@ Respect the OKF style (MoSS): put the most important mitigation as the very firs
 ```
 
 ## 4. Improve Writing
-- **Tag**: `#workflow:copywriting`, `#workflow:revisione`
+- **Tag**: `#workflow:copywriting`, `#workflow:review`
 - **Description**: An editorial pattern to elevate prose, remove corporate speak, and make text sharp and clear.
 - **Prompt (to inject)**:
 ```markdown
@@ -71,7 +71,7 @@ OUTPUT RULES:
 ```
 
 ## 5. Extract Article
-- **Tag**: `#workflow:scraping`, `#workflow:ingestione_raw`
+- **Tag**: `#workflow:scraping`, `#workflow:raw_ingestion`
 - **Description**: Cleans the dirty output of HTML scraping (e.g., tags, navbars) returning only the pure article text. Essential for the `1.1 - RAW` folder.
 - **Prompt (to inject)**:
 ```markdown
