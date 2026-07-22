@@ -3,154 +3,154 @@
 This file contains comprehensive frameworks, multi-agent platforms, MCP servers, and infrastructure orchestration tools. Each resource is evaluated to help you choose the best architecture for Advanced Research systems and academic simulations.
 
 ## Standalone Platforms and Frameworks
-- **[Omnigent](https://github.com/omnigent-ai/omnigent)**: Universal open-source agentic framework and meta-harness.
+- **[Omnigent](https://github.com/omnigent-ai/omnigent)** `#archetype:operational_pipeline #purpose:automation`: Universal open-source agentic framework and meta-harness.
   - **✅ Pros**: Highly interoperable (Claude, Cursor, Pi), allowing different agents to collaborate under strict policies.
   - **❌ Cons**: Can be unstable for "minimal" local setups.
   - **💡 Recommendations**: Excellent as a layer for experimenting in complex environments.
-- **[EpicStaff](https://github.com/EpicStaff/EpicStaff)**: Self-hosted platform with a visual editor and Django backend for building workflows.
+- **[EpicStaff](https://github.com/EpicStaff/EpicStaff)** `#archetype:operational_pipeline #purpose:automation`: Self-hosted platform with a visual editor and Django backend for building workflows.
   - **✅ Pros**: Excellent visual interface for non-technical managers and analysts.
   - **❌ Cons**: Dependency on Django (heavy to maintain).
   - **💡 Recommendations**: Use it to graphically demonstrate to students/trainees how data flows between agents.
   - **🔄 Better Alternative**: If you need a native, modern visual editor, consider *Flowise* or *Langflow*.
-- **[PraisonAI](https://github.com/MervinPraison/PraisonAI)**: Multi-agent framework with integrated memory and support for 100+ LLMs.
+- **[PraisonAI](https://github.com/MervinPraison/PraisonAI)** `#archetype:operational_pipeline #purpose:automation`: Multi-agent framework with integrated memory and support for 100+ LLMs.
   - **✅ Pros**: Very easy to initialize ("low code"), excellent support for local LLMs.
   - **❌ Cons**: The architecture is less scalable compared to other "enterprise" frameworks.
   - **💡 Recommendations**: Use it to generate quick swarms (e.g., a geopolitical analyst, a translator, a fact-checker).
-- **[OpenMAIC](https://github.com/THU-MAIC/OpenMAIC)**: Multi-agent learning experience.
+- **[OpenMAIC](https://github.com/THU-MAIC/OpenMAIC)** `#archetype:operational_pipeline #purpose:automation`: Multi-agent learning experience.
   - **✅ Pros**: Perfect for simulating classrooms or training scenarios.
   - **❌ Cons**: Very niche use case.
   - **💡 Recommendations**: Keep it aside for educational simulations in Training.
-- **[GOD (Govern, Observe, Direct)](https://github.com/XiaoLuoLYG/GOD)**: Real-time control room for monitoring agent societies.
+- **[GOD (Govern, Observe, Direct)](https://github.com/XiaoLuoLYG/GOD)** `#archetype:operational_pipeline #purpose:automation`: Real-time control room for monitoring agent societies.
   - **✅ Pros**: Great observability layer (logs, costs, actions).
   - **❌ Cons**: Requires complex server-side configuration.
   - **💡 Recommendations**: Use such a panel to have the "God View" while agents process Analytical Research (OSINT) overnight.
   - **🔄 Better Alternative**: *LangSmith* or *Phoenix* (Arize) offer more mature enterprise-level tracing.
-- **[Hivemind](https://github.com/activeloopai/hivemind)**: Transforms past execution traces into reusable skills.
+- **[Hivemind](https://github.com/activeloopai/hivemind)** `#archetype:operational_pipeline #purpose:automation`: Transforms past execution traces into reusable skills.
   - **✅ Pros**: Innovative approach to continuous learning (workflow capture).
   - **❌ Cons**: Fragmented documentation.
   - **💡 Recommendations**: Integrate it if you want agents to stop repeatedly asking for the same permissions.
-- **[Agentic Inbox](https://github.com/cloudflare/agentic-inbox)**: Self-hosted email client on Cloudflare Workers with AI.
+- **[Agentic Inbox](https://github.com/cloudflare/agentic-inbox)** `#archetype:operational_pipeline #purpose:automation`: Self-hosted email client on Cloudflare Workers with AI.
   - **✅ Pros**: Secure, serverless, ideal for triaging incoming sources/newsletters.
   - **❌ Cons**: Requires a Cloudflare account and configured domains.
   - **💡 Recommendations**: Implement it to automate the ingestion of bulletins and RSS feeds directly into the Second Brain.
-- **[Agency Agents](https://github.com/msitarzewski/agency-agents) and [Paperclip Companies](https://github.com/paperclipai/companies)**: Ready-made templates of "Agencies" and organizations.
+- **[Agency Agents](https://github.com/msitarzewski/agency-agents) and [Paperclip Companies](https://github.com/paperclipai/companies)** `#archetype:operational_pipeline #purpose:automation`: Ready-made templates of "Agencies" and organizations.
   - **✅ Pros**: "Ready-to-use" design patterns for simulating complete corporate teams.
   - **❌ Cons**: Too generic.
   - **💡 Recommendations**: Use them as a starting point (copy-paste) to structure the cyber-intelligence unit.
-- **[Ouroboros](https://github.com/razzant/ouroboros)** and **[OpenFugu](https://github.com/trotsky1997/OpenFugu)**: Self-generating agents / Centralized orchestrators.
+- **[Ouroboros](https://github.com/razzant/ouroboros)** and **[OpenFugu](https `#archetype:operational_pipeline #purpose:automation`://github.com/trotsky1997/OpenFugu)**: Self-generating agents / Centralized orchestrators.
   - **✅ Pros**: Interesting for academic studies on "Model Evolution".
   - **❌ Cons**: Extremely unstable and experimental.
   - **💡 Recommendations**: Handle with care; do not use for real data.
-- **[Ruflo](https://github.com/ruvnet/ruflo)**: Meta-harness for multiplayer swarms with adaptive memory.
+- **[Ruflo](https://github.com/ruvnet/ruflo)** `#archetype:operational_pipeline #purpose:automation`: Meta-harness for multiplayer swarms with adaptive memory.
   - **✅ Pros**: Very powerful in integrating external tools (Codex, Claude).
   - **❌ Cons**: Strong dependency on complex CLI tools.
   - **💡 Recommendations**: Test it in secure sandbox environments.
-- **[Clowder AI](https://github.com/zts212653/clowder-ai)**: Framework for teams guided by "hard rails" (rules) and "soft power".
+- **[Clowder AI](https://github.com/zts212653/clowder-ai)** `#archetype:operational_pipeline #purpose:automation`: Framework for teams guided by "hard rails" (rules) and "soft power".
   - **✅ Pros**: Excellent concept (combines mathematical rules and behavioral prompts).
   - **❌ Cons**: Still in an early development stage.
   - **💡 Recommendations**: Keep an eye on it for the future.
-- **[Orkestr](https://github.com/eooo-io/orkestr)**: React 19 + Laravel 12 platform for multi-tenant orchestration.
+- **[Orkestr](https://github.com/eooo-io/orkestr)** `#archetype:operational_pipeline #purpose:automation`: React 19 + Laravel 12 platform for multi-tenant orchestration.
   - **✅ Pros**: Robust, full web interface, ideal for "reselling" or deploying AI services.
   - **❌ Cons**: Heavy web stack (PHP/Laravel).
   - **💡 Recommendations**: Install it if you plan to grant system access to colleagues or external trainees.
-- **[GStack](https://github.com/garrytan/gstack)**: The exact setup used by Garry Tan (YCombinator).
+- **[GStack](https://github.com/garrytan/gstack)** `#archetype:operational_pipeline #purpose:automation`: The exact setup used by Garry Tan (YCombinator).
   - **✅ Pros**: Provides a setup proven in the startup world.
   - **❌ Cons**: Focused solely on web entrepreneurship.
   - **💡 Recommendations**: Ignore it for Analytical Research (OSINT), but show it to Training students if they want to build startups.
-- **[AutoResearch](https://github.com/karpathy/autoresearch)**: Agents for autonomous research on nanochat training.
+- **[AutoResearch](https://github.com/karpathy/autoresearch)** `#archetype:operational_pipeline #purpose:automation`: Agents for autonomous research on nanochat training.
   - **✅ Pros**: Project by A. Karpathy, extremely high quality.
   - **❌ Cons**: Focused on Machine Learning and training.
   - **💡 Recommendations**: For purely theoretical use only.
-- **[Midday](https://github.com/midday-ai/midday)**: AI invoicing/management platform for freelancers.
+- **[Midday](https://github.com/midday-ai/midday)** `#archetype:operational_pipeline #purpose:automation`: AI invoicing/management platform for freelancers.
   - **✅ Pros**: Great open-source commercial product.
   - **❌ Cons**: No practical use in Analytical Research (OSINT) or research.
   - **💡 Recommendations**: Irrelevant for this Knowledge Factory; you can archive it.
 
 ## Environment, Orchestration & Harness
-- **[Agent Swarm](https://github.com/VIVEHACKER/agent-swarm)**: Zero-dependency orchestration in Python (DAG).
+- **[Agent Swarm](https://github.com/VIVEHACKER/agent-swarm)** `#archetype:system_design #purpose:orchestration`: Zero-dependency orchestration in Python (DAG).
   - **✅ Pros**: Lightweight, no giant external libraries, ontological routing.
   - **❌ Cons**: Lacks pre-built integrations (APIs).
   - **💡 Recommendations**: Use it if you need to integrate a swarm on minimal air-gapped servers without internet access.
   - **🔄 Better Alternative**: If you have connectivity and storage space, use *LangGraph*.
-- **[LM Studio Bionic](https://github.com/lmstudio-ai/bionic)**: AI agent for local orchestration.
+- **[LM Studio Bionic](https://github.com/lmstudio-ai/bionic)** `#archetype:system_design #purpose:orchestration`: AI agent for local orchestration.
   - **✅ Pros**: Integrates natively with LM Studio for off-grid (fully local) LLMs.
   - **❌ Cons**: Limited to the LM Studio ecosystem.
   - **💡 Recommendations**: Essential if operating in classified/disconnected environments and not using Ollama.
-- **[Free Claude Code](https://github.com/Alishahryar1/free-claude-code)** and **[Gemini Web2API](https://github.com/Sophomoresty/gemini-web2api)** / **[WindsurfAPI](https://github.com/dwgx/WindsurfAPI)**: Scrapers for "free" APIs from web interfaces.
+- **[Free Claude Code](https://github.com/Alishahryar1/free-claude-code)** and **[Gemini Web2API](https `#archetype:system_design #purpose:orchestration`://github.com/Sophomoresty/gemini-web2api)** / **[WindsurfAPI](https://github.com/dwgx/WindsurfAPI)**: Scrapers for "free" APIs from web interfaces.
   - **✅ Pros**: Save API costs, useful during intensive testing.
   - **❌ Cons**: Highly unstable (if Anthropic/Google changes UI, they break). They violate commercial TOS.
   - **💡 Recommendations**: Use sparingly only locally for debugging.
   - **🔄 Better Alternative**: *OmniRoute* with a local model (Llama3 via Ollama) is 100 times more stable and legally safe.
-- **[ECC](https://github.com/affaan-m/ECC)**: "Agent harness performance optimization system".
+- **[ECC](https://github.com/affaan-m/ECC)** `#archetype:system_design #purpose:orchestration`: "Agent harness performance optimization system".
   - **✅ Pros**: Manages instincts, memory, and security for Goose/Claude Code.
   - **❌ Cons**: Overwrites complex system instructions.
   - **💡 Recommendations**: Similar to Agentic Stack; choose whichever you find easier to maintain over time.
-- **[Claude Memory Compiler](https://github.com/coleam00/claude-memory-compiler)**: Extends memory by creating documentation.
+- **[Claude Memory Compiler](https://github.com/coleam00/claude-memory-compiler)** `#archetype:system_design #purpose:orchestration`: Extends memory by creating documentation.
   - **✅ Pros**: Converts chats into structured docs, saving logs.
   - **❌ Cons**: Limited to Claude.
   - **💡 Recommendations**: Excellent if Claude Code is the sole "executor".
-- **[Alexandrie](https://github.com/Smaug6739/Alexandrie)**: Open-source alternative to Notion/Obsidian.
+- **[Alexandrie](https://github.com/Smaug6739/Alexandrie)** `#archetype:system_design #purpose:orchestration`: Open-source alternative to Notion/Obsidian.
   - **✅ Pros**: Offline-first, advanced Markdown support, and local SQLite database.
   - **❌ Cons**: Smaller plugin ecosystem compared to Obsidian.
   - **💡 Recommendations**: If you want to de-Google and de-Obsidian the environment for absolute privacy reasons, it's a great choice.
-- **[Guild](https://github.com/mathomhaus/guild)**: Task coordination between coding agents (Go binary).
+- **[Guild](https://github.com/mathomhaus/guild)** `#archetype:system_design #purpose:orchestration`: Task coordination between coding agents (Go binary).
   - **✅ Pros**: Extremely fast, zero-setup, embedded SQLite.
   - **❌ Cons**: Designed specifically for coordinating *coding* tasks, not research.
   - **💡 Recommendations**: Leverage it if the team is developing tools locally.
-- **[Memanto](https://github.com/moorcheh-ai/memanto)**, **[OpenKB](https://github.com/VectifyAI/OpenKB)**, **[PageIndex](https://github.com/VectifyAI/PageIndex)**: RAG and memory tools for agents.
+- **[Memanto](https://github.com/moorcheh-ai/memanto)**, **[OpenKB](https `#archetype:system_design #purpose:orchestration`://github.com/VectifyAI/OpenKB)**, **[PageIndex](https://github.com/VectifyAI/PageIndex)**: RAG and memory tools for agents.
   - **✅ Pros**: Systems specialized in overcoming classic RAG limits and vector chunking.
   - **❌ Cons**: Compete in a very crowded space.
   - **💡 Recommendations**: Experiment with them, but currently *Graphify* offers a much more useful semantic paradigm for high-level Analytical Research (OSINT) compared to pure "vectorless reasoning".
 
 ## Infrastructure Tools, APIs & MCP Servers
-- **[MemPalace](https://github.com/MemPalace/mempalace)**: High-performance vector AI memory system.
+- **[MemPalace](https://github.com/MemPalace/mempalace)** `#tool:infrastructure #purpose:api`: High-performance vector AI memory system.
   - **✅ Pros**: Among the best benchmarks for recall in open-source vector databases.
   - **❌ Cons**: Does not offer a relationship graph, only spatial similarity.
   - **💡 Recommendations**: Powerful engine to store terabytes of raw text to query occasionally.
-- **[A2A Search MCP](https://github.com/tadas-github/a2asearch-mcp)**: Search engine for the AI agent ecosystem.
+- **[A2A Search MCP](https://github.com/tadas-github/a2asearch-mcp)** `#tool:infrastructure #purpose:api`: Search engine for the AI agent ecosystem.
   - **✅ Pros**: The "Google for agents". The agent can use it to find other tools or MCP servers on its own.
   - **❌ Cons**: Depends on their central index.
   - **💡 Recommendations**: Essential. Install it in Goose so that if you ask to "use a tool for X", Goose searches for it, downloads it, and uses it autonomously.
-- **[Omniparse](https://github.com/adithya-s-k/omniparse)**: Extraction of audio, video, web, docs into Markdown.
+- **[Omniparse](https://github.com/adithya-s-k/omniparse)** `#tool:infrastructure #purpose:api`: Extraction of audio, video, web, docs into Markdown.
   - **✅ Pros**: More flexible than MarkItDown (also handles audio/video).
   - **❌ Cons**: Less precise on individual tables compared to MinerU.
   - **💡 Recommendations**: Great as a "Swiss Army knife" if you have mixed Analytical Research (OSINT) sources (e.g. YouTube video to transcribe + PDF report).
-- **[CyberScraper 2077](https://github.com/itsOwen/CyberScraper-2077)**: Advanced web scraper.
+- **[CyberScraper 2077](https://github.com/itsOwen/CyberScraper-2077)** `#tool:infrastructure #purpose:api`: Advanced web scraper.
   - **✅ Pros**: Cloudflare bypass, direct HTML parsing for agents.
   - **❌ Cons**: Can be blocked by aggressive anti-bot systems.
   - **💡 Recommendations**: Use this instead of simple Python scripts when you need to scrape adversary sites.
-- **[Prompt Master](https://github.com/nidhinjs/prompt-master)**: Management and testing of prompt collections.
+- **[Prompt Master](https://github.com/nidhinjs/prompt-master)** `#tool:infrastructure #purpose:api`: Management and testing of prompt collections.
   - **✅ Pros**: Helps version (like git) academic and intelligence prompts.
   - **❌ Cons**: Often it is easier to use a simple markdown file.
   - **💡 Recommendations**: Avoid if the team is small (1-2 people).
-- **[Obsidian PM](https://github.com/StepanKropachev/obsidian-pm)**: Project Management plugin in Obsidian.
+- **[Obsidian PM](https://github.com/StepanKropachev/obsidian-pm)** `#tool:infrastructure #purpose:api`: Project Management plugin in Obsidian.
   - **✅ Pros**: Keeps everything (notes, tasks, graphs) in the same place.
   - **❌ Cons**: A bit cumbersome compared to Jira/Linear.
   - **💡 Recommendations**: Useful if you want the LLM to manage tasks directly from the Obsidian folder.
-- **[Flint](https://github.com/microsoft/flint)**: LLM-friendly charting language.
+- **[Flint](https://github.com/microsoft/flint)** `#tool:infrastructure #purpose:api`: LLM-friendly charting language.
   - **✅ Pros**: Solves the chronic issue of AIs writing incorrect Python code for Matplotlib charts.
   - **❌ Cons**: Non-standard (you have to learn its syntax).
   - **💡 Recommendations**: Integrate Flint if you want the agent to automatically generate charts in the final report.
-- **[Aict](https://github.com/aict-tools/aict)**: Unix coreutils for native JSON/XML output.
+- **[Aict](https://github.com/aict-tools/aict)** `#tool:infrastructure #purpose:api`: Unix coreutils for native JSON/XML output.
   - **✅ Pros**: The agent does not need to use `sed/awk` to manipulate complex log files; output is already structured for it.
   - **❌ Cons**: You have to learn a new set of CLI commands.
   - **💡 Recommendations**: Highly recommended to install on the machine so Goose can read the system cleanly.
-- **[FableCut](https://github.com/fablecut/fablecut)** and **[Supertonic](https://github.com/supertone-inc/supertonic)**: Tools for generating video (JS editor) and audio.
+- **[FableCut](https://github.com/fablecut/fablecut)** and **[Supertonic](https `#tool:infrastructure #purpose:api`://github.com/supertone-inc/supertonic)**: Tools for generating video (JS editor) and audio.
   - **✅ Pros**: Operable locally via programming.
   - **❌ Cons**: Media generation is very resource-intensive.
   - **💡 Recommendations**: Leverage them if you want to generate automatic "Teasers" or podcasts from Analytical Research (OSINT) investigations (e.g. with NotebookLM prompts).
-- **[VulnHunter](https://github.com/capitalone/vulnhunter)**: Agentic security tool (Capital One).
+- **[VulnHunter](https://github.com/capitalone/vulnhunter)** `#tool:infrastructure #purpose:api`: Agentic security tool (Capital One).
   - **✅ Pros**: Enterprise quality, essential for code review (including downloaded frameworks).
   - **❌ Cons**: Specific to AppSec.
   - **💡 Recommendations**: Run unknown Analytical Research (OSINT) frameworks through VulnHunter before executing them on a local PC.
 
 ## Miscellaneous Tools & Utilities
-- **[jcode](https://github.com/1jehuang/jcode)**: As previously mentioned, multi-session Rust coding engine. (Keep on the bench).
-- **[Claude Scholar](https://github.com/Galaxy-Dawn/claude-scholar)**: Tool to connect Claude to academic databases.
+- **[jcode](https://github.com/1jehuang/jcode)** `#tool:utility #purpose:support`: As previously mentioned, multi-session Rust coding engine. (Keep on the bench).
+- **[Claude Scholar](https://github.com/Galaxy-Dawn/claude-scholar)** `#tool:utility #purpose:support`: Tool to connect Claude to academic databases.
   - **✅ Pros**: Accesses papers and literature "hidden" from standard search engines.
   - **💡 Recommendations**: Essential for the "Training" aspect (rigorous citations and basic research).
-- **[Open Analytical Research (OSINT)](https://github.com/OpenRicerca Analitica (OSINT)/OpenRicerca Analitica (OSINT))**: Analytical Research (OSINT) tool powered by AI automations.
+- **[Open Analytical Research (OSINT)](https://github.com/OpenRicerca Analitica (OSINT)/OpenRicerca Analitica (OSINT))** `#tool:utility #purpose:support`: Analytical Research (OSINT) tool powered by AI automations.
   - **✅ Pros**: Classic recon tools combined with LLMs.
   - **💡 Recommendations**: The "Must-Have" of the entire project. Thoroughly analyze its pipelines to replicate them in the local agent.
-- **[AI Job Search](https://github.com/MadsLorentzen/ai-job-search)**, **[Open Notebook](https://github.com/lfnovo/open-notebook)**, **[Headroom](https://github.com/headroomlabs-ai/headroom)**: "SaaS-like" tools for specific niches (jobs, notebook, meeting).
+- **[AI Job Search](https://github.com/MadsLorentzen/ai-job-search)**, **[Open Notebook](https `#tool:utility #purpose:support`://github.com/lfnovo/open-notebook)**, **[Headroom](https://github.com/headroomlabs-ai/headroom)**: "SaaS-like" tools for specific niches (jobs, notebook, meeting).
   - **💡 Recommendations**: For a Second Brain and structured Advanced Research/Analytical Research (OSINT), these are secondary or entirely unnecessary tools; you can safely disregard them or move them to archive (`/old/`).

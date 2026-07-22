@@ -9,15 +9,15 @@
 *Tools for web search, raw information extraction, and standardization into LLM-readable formats.*
 
 ### Autonomous Research & Analytical Research (OSINT)
-- **[Agent Reach](https://github.com/Panniantong/Agent-Reach)**: Skill to give the agent "eyes" on the Internet: allows searching and reading Twitter, Reddit, YouTube, GitHub for free via CLI.
+- **[Agent Reach](https://github.com/Panniantong/Agent-Reach)** `#workflow:osint #role:data_gathering #archetype:intelligence`: Skill to give the agent "eyes" on the Internet: allows searching and reading Twitter, Reddit, YouTube, GitHub for free via CLI.
   - **✅ Pros**: Free, easy CLI integration, supports multiple platforms.
   - **❌ Cons**: Limited to supported public sources, risk of instability if unofficial APIs change.
   - **💡 Tips**: Use it for quick social trend checks (e.g., "what is being said today about a certain topic").
-- **[Last 30 Days Skill](https://github.com/mvanhorn/last30days-skill)**: Skill that performs in-depth searches across the last 30 days (web and social) and synthesizes a factual summary.
+- **[Last 30 Days Skill](https://github.com/mvanhorn/last30days-skill)** `#workflow:osint #role:data_gathering #archetype:intelligence`: Skill that performs in-depth searches across the last 30 days (web and social) and synthesizes a factual summary.
   - **✅ Pros**: Precise temporal focus, useful for staying up to date.
   - **❌ Cons**: Limited to the 30-day window, less useful for deep historical research.
   - **💡 Tips**: Implement it to generate automated morning briefings on trending topics.
-- **[Perplexica](https://github.com/ItzCrazyKns/Perplexica)**: Privacy-focused AI search engine supporting local and cloud LLMs.
+- **[Perplexica](https://github.com/ItzCrazyKns/Perplexica)** `#workflow:osint #role:data_gathering #archetype:intelligence`: Privacy-focused AI search engine supporting local and cloud LLMs.
   - **✅ Pros**: Complete privacy, interfaces with Ollama, open-source.
   - **❌ Cons**: Requires hardware resources if used 100% locally.
   - **💡 Tips**: Replace Google with Perplexica if processing sensitive intelligence data.
@@ -25,41 +25,41 @@
   - **✅ Pros**: "Wikipedia"-quality output, rigorous citations, multi-perspective approach.
   - **❌ Cons**: Slow to run, high token cost if not used with local models.
   - **💡 Tips**: Use it only to generate final deliverables (whitepapers) for C-Level executives.
-- **[GPT Researcher](https://github.com/assimp/gpt-researcher)**: Automates the "Plan → Search → Read → Reflect → Synthesize" cycle.
+- **[GPT Researcher](https://github.com/assimp/gpt-researcher)** `#workflow:osint #role:data_gathering #archetype:intelligence`: Automates the "Plan → Search → Read → Reflect → Synthesize" cycle.
   - **✅ Pros**: Highly flexible and configurable for various output formats.
   - **❌ Cons**: Less structured in using debating "personas" compared to STORM.
   - **💡 Tips**: The generic search engine (the daily "Agentic Google").
-- **[Agent Laboratory](https://github.com/agent-laboratory/agent-laboratory)**: Framework for the full research cycle.
+- **[Agent Laboratory](https://github.com/agent-laboratory/agent-laboratory)** `#workflow:osint #role:data_gathering #archetype:intelligence`: Framework for the full research cycle.
   - **✅ Pros**: Deep academic rigor, hypothesis testing.
   - **❌ Cons**: Overly complex for quick analytical research (OSINT) queries.
   - **💡 Tips**: Ideal if you are producing a document or course requiring scientific validation.
-- **[OWASP Social OSINT Agent](https://github.com/OWASP/SocialOSINTAgent)**: OSINT agent focused on social media, images, and text.
+- **[OWASP Social OSINT Agent](https://github.com/OWASP/SocialOSINTAgent)** `#workflow:osint #role:data_gathering #archetype:intelligence`: OSINT agent focused on social media, images, and text.
   - **✅ Pros**: Created for cybersecurity (OWASP), deep cross-analysis.
   - **❌ Cons**: Sector-specific, focused primarily on threat intelligence and profiling.
   - **💡 Tips**: Use it when you need to investigate or trace specific profiles.
-- **[Brave Search MCP Server](https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search)**: MCP Server for parallel web search.
+- **[Brave Search MCP Server](https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search)** `#workflow:osint #role:data_gathering #archetype:intelligence`: MCP Server for parallel web search.
   - **✅ Pros**: Native web browsing for MCP agents (like Goose or Claude Code) in full transparency.
   - **❌ Cons**: Subject to Brave Search free rate limits.
   - **💡 Tips**: Essential plugin to keep running in the background on the local agent.
 
 ### Data Extraction: PDF-to-Markdown Solutions
-- **[MinerU (by OpenDataLab)](https://github.com/opendatalab/MinerU)**: Uses a vision-language model.
+- **[MinerU (by OpenDataLab)](https://github.com/opendatalab/MinerU)** `#workflow:raw_ingestion #tool:extraction`: Uses a vision-language model.
   - **✅ Pros**: Unbeatable accuracy for complex layouts (intricate tables, formulas).
   - **❌ Cons**: Requires high-performance GPUs, difficult to configure on standard laptops.
   - **💡 Tips**: Indispensable if working with long, chart-heavy high-security/financial reports.
-- **[Marker (by Datalab)](https://github.com/VikParuchuri/marker)**: High-performance conversion model.
+- **[Marker (by Datalab)](https://github.com/VikParuchuri/marker)** `#workflow:raw_ingestion #tool:extraction`: High-performance conversion model.
   - **✅ Pros**: Very fast (batch processing), includes a `--use_llm` flag to fix unusual formatting.
   - **❌ Cons**: Mixed licenses that may restrict certain commercial edge cases.
   - **💡 Tips**: Ideal for bulk ingestion of most downloaded OSINT documents.
-- **[Docling (by IBM)](https://github.com/DS4SD/docling)**: Enterprise framework (MIT license).
+- **[Docling (by IBM)](https://github.com/DS4SD/docling)** `#workflow:raw_ingestion #tool:extraction`: Enterprise framework (MIT license).
   - **✅ Pros**: Runs excellently on CPU, reads DOCX and PPTX for RAG (LlamaIndex/LangChain).
   - **❌ Cons**: Slight loss of visual fidelity on highly fragmented documents.
   - **💡 Tips**: Use it if you lack a dedicated GPU or are processing presentations and Word documents.
-- **[Unstructured](https://github.com/Unstructured-IO/unstructured)**: Industrial RAG tool.
+- **[Unstructured](https://github.com/Unstructured-IO/unstructured)** `#workflow:raw_ingestion #tool:extraction`: Industrial RAG tool.
   - **✅ Pros**: Proven enterprise reliability, zero workflow bottlenecks.
   - **❌ Cons**: Heavy architecture with numerous dependencies (not "agile").
   - **💡 Tips**: Choose it for highly stable multi-user RAG pipelines.
-- **[MarkItDown](https://github.com/microsoft/markitdown)**: Essential Microsoft utility.
+- **[MarkItDown](https://github.com/microsoft/markitdown)** `#workflow:raw_ingestion #tool:extraction`: Essential Microsoft utility.
   - **✅ Pros**: Lightweight, instantaneous on plain text.
   - **❌ Cons**: Fails to preserve nested tables or perform OCR on complex images.
   - **💡 Tips**: Use it only for converting old plain text documents (e.g., notes and text files).
@@ -206,53 +206,53 @@
 
 This file contains platforms, multi-agent frameworks, and complex orchestration solutions that are standalone.
 
-- [Example Resource Name](./resources/example-resource.md) - [Briefly describe the resource, e.g., "Internal style guide for Python projects"]
-- [Council of High Intelligence](https://github.com/0xNyk/council-of-high-intelligence) - Framework multi-agente
-- [EpicStaff](https://github.com/EpicStaff/EpicStaff) - Piattaforma self-hosted per costruire flussi di agenti AI
-- [PraisonAI](https://github.com/MervinPraison/PraisonAI) - Framework multi-agente per automazione
-- [Agent Reach](https://github.com/Panniantong/Agent-Reach) - Framework per l'espansione delle capacità degli agenti
-- [OpenMAIC](https://github.com/THU-MAIC/OpenMAIC) - Piattaforma e framework open source per AI
-- [GOD](https://github.com/XiaoLuoLYG/GOD) - Framework sperimentale per agenti
-- [Hivemind](https://github.com/activeloopai/hivemind) - Framework decentralizzato per AI
-- [Bytechef](https://github.com/bytechefhq/bytechef) - Piattaforma e harness per workflow agentici
-- [Agentic Inbox](https://github.com/cloudflare/agentic-inbox) - Tool di gestione flussi agentici
-- [Agency Agents](https://github.com/msitarzewski/agency-agents) - Framework per agenzie di agenti AI
-- [Omnigent](https://github.com/omnigent-ai/omnigent) - Framework agentico universale
-- [Ouroboros](https://github.com/razzant/ouroboros) - Framework di esecuzione ciclica e autonoma
-- [Ruflo](https://github.com/ruvnet/ruflo?utm_source=chatgpt.com) - Framework per flussi di lavoro AI
-- [OpenFugu](https://github.com/trotsky1997/OpenFugu) - Framework agentico Open Source
-- [Clowder AI](https://github.com/zts212653/clowder-ai) - Framework multi-agente
-- [Paperclip](https://github.com/paperclipai/paperclip) - Framework e harness agentico
-- [GStack](https://github.com/garrytan/gstack) - Stack e framework di sviluppo AI
-- [AutoResearch](https://github.com/karpathy/autoresearch) - Framework per ricerca automatizzata
-- [Midday](https://github.com/midday-ai/midday) - Piattaforma operativa e framework AI
-- [jcode](https://github.com/1jehuang/jcode) - Tool e ambiente di sviluppo
-- [Claude Scholar](https://github.com/Galaxy-Dawn/claude-scholar) - Tool per ricerca accademica con Claude
-- [Claw Empire](https://github.com/GreenSheep01201/claw-empire) - Progetto di test e orchestrazione AI
-- [AI Job Search](https://github.com/MadsLorentzen/ai-job-search) - Automazione per ricerca lavoro tramite AI
-- [OpenOSINT](https://github.com/OpenOSINT/OpenOSINT) - Tool OSINT integrato con AI
-- [Alexandrie](https://github.com/Smaug6739/Alexandrie) - Gestore di librerie e memoria per AI
-- [OpenKB](https://github.com/VectifyAI/OpenKB) - Knowledge Base open source per RAG
-- [PageIndex](https://github.com/VectifyAI/PageIndex) - Strumento di indicizzazione vettoriale
-- [Agentic AI Landscape](https://github.com/antgroup/agentic-ai-landscape) - Mappa e raccolta dell'ecosistema agentico
-- [Crucix](https://github.com/calesthio/Crucix) - Tool sperimentale
-- [OpenMontage](https://github.com/calesthio/OpenMontage) - Tool per manipolazione media
-- [Headroom](https://github.com/headroomlabs-ai/headroom) - Piattaforma AI integrata
-- [SciWrite](https://github.com/labarba/sciwrite) - Tool AI per scrittura scientifica
-- [Open Notebook](https://github.com/lfnovo/open-notebook) - Ambiente di notebook sperimentale
-- [Guild](https://github.com/mathomhaus/guild) - Sistema di orchestrazione task
-- [Memanto](https://github.com/moorcheh-ai/memanto) - Tool di memorizzazione AI
-- [CLI Printing Press](https://github.com/mvanhorn/cli-printing-press) - Automazione per pubblicazione via terminale
-- [OpenDataLoader PDF](https://github.com/opendataloader-project/opendataloader-pdf) - Estrattore di testo da PDF per RAG
-- [Heretic](https://github.com/p-e-w/heretic) - Tool e framework sperimentale
-- [Odysseus](https://github.com/pewdiepie-archdaemon/odysseus) - Tool di navigazione autonoma per agenti
-- [AI Engineering From Scratch](https://github.com/rohitg00/ai-engineering-from-scratch) - Guida e codice per l'ingegneria AI
-- [TDoc](https://github.com/serenakeyitan/tdoc) - Strumento di generazione documentazione
-- [Supertonic](https://github.com/supertone-inc/supertonic) - Tool AI per l'audio
-- [https://pinperepette.github.io/signal.pirate/articoli/l-agente-non-ha-una-forma.html?t=d](https://pinperepette.github.io/signal.pirate/articoli/l-agente-non-ha-una-forma.html?t=d) - Articolo: L'Agente non ha una forma
-- [https://www.langchain.com/blog/the-anatomy-of-an-agent-harness#can-someone-please-define-a-harness](https://www.langchain.com/blog/the-anatomy-of-an-agent-harness#can-someone-please-define-a-harness) - Articolo che definisce Agent Harness
-- [https://www.smartworld.it/news/gemini-memoria-persistente-import-chat-chatgpt-claude.html](https://www.smartworld.it/news/gemini-memoria-persistente-import-chat-chatgpt-claude.html) - Articolo: Gemini porta la memoria persistente in Italia e permette di importare le chat da ChatGPT e Claude
-- [https://agentsfromscratch.com/](https://agentsfromscratch.com/) - Learn to build AI agents locally without frameworks
+- [Example Resource Name](./resources/example-resource.md) `#archetype:operational_pipeline #purpose:automation` - [Briefly describe the resource, e.g., "Internal style guide for Python projects"]
+- [Council of High Intelligence](https://github.com/0xNyk/council-of-high-intelligence) `#archetype:operational_pipeline #purpose:automation` - Framework multi-agente
+- [EpicStaff](https://github.com/EpicStaff/EpicStaff) `#archetype:operational_pipeline #purpose:automation` - Piattaforma self-hosted per costruire flussi di agenti AI
+- [PraisonAI](https://github.com/MervinPraison/PraisonAI) `#archetype:operational_pipeline #purpose:automation` - Framework multi-agente per automazione
+- [Agent Reach](https://github.com/Panniantong/Agent-Reach) `#archetype:operational_pipeline #purpose:automation` - Framework per l'espansione delle capacità degli agenti
+- [OpenMAIC](https://github.com/THU-MAIC/OpenMAIC) `#archetype:operational_pipeline #purpose:automation` - Piattaforma e framework open source per AI
+- [GOD](https://github.com/XiaoLuoLYG/GOD) `#archetype:operational_pipeline #purpose:automation` - Framework sperimentale per agenti
+- [Hivemind](https://github.com/activeloopai/hivemind) `#archetype:operational_pipeline #purpose:automation` - Framework decentralizzato per AI
+- [Bytechef](https://github.com/bytechefhq/bytechef) `#archetype:operational_pipeline #purpose:automation` - Piattaforma e harness per workflow agentici
+- [Agentic Inbox](https://github.com/cloudflare/agentic-inbox) `#archetype:operational_pipeline #purpose:automation` - Tool di gestione flussi agentici
+- [Agency Agents](https://github.com/msitarzewski/agency-agents) `#archetype:operational_pipeline #purpose:automation` - Framework per agenzie di agenti AI
+- [Omnigent](https://github.com/omnigent-ai/omnigent) `#archetype:operational_pipeline #purpose:automation` - Framework agentico universale
+- [Ouroboros](https://github.com/razzant/ouroboros) `#archetype:operational_pipeline #purpose:automation` - Framework di esecuzione ciclica e autonoma
+- [Ruflo](https://github.com/ruvnet/ruflo?utm_source=chatgpt.com) `#archetype:operational_pipeline #purpose:automation` - Framework per flussi di lavoro AI
+- [OpenFugu](https://github.com/trotsky1997/OpenFugu) `#archetype:operational_pipeline #purpose:automation` - Framework agentico Open Source
+- [Clowder AI](https://github.com/zts212653/clowder-ai) `#archetype:operational_pipeline #purpose:automation` - Framework multi-agente
+- [Paperclip](https://github.com/paperclipai/paperclip) `#archetype:operational_pipeline #purpose:automation` - Framework e harness agentico
+- [GStack](https://github.com/garrytan/gstack) `#archetype:operational_pipeline #purpose:automation` - Stack e framework di sviluppo AI
+- [AutoResearch](https://github.com/karpathy/autoresearch) `#archetype:operational_pipeline #purpose:automation` - Framework per ricerca automatizzata
+- [Midday](https://github.com/midday-ai/midday) `#archetype:operational_pipeline #purpose:automation` - Piattaforma operativa e framework AI
+- [jcode](https://github.com/1jehuang/jcode) `#archetype:operational_pipeline #purpose:automation` - Tool e ambiente di sviluppo
+- [Claude Scholar](https://github.com/Galaxy-Dawn/claude-scholar) `#archetype:operational_pipeline #purpose:automation` - Tool per ricerca accademica con Claude
+- [Claw Empire](https://github.com/GreenSheep01201/claw-empire) `#archetype:operational_pipeline #purpose:automation` - Progetto di test e orchestrazione AI
+- [AI Job Search](https://github.com/MadsLorentzen/ai-job-search) `#archetype:operational_pipeline #purpose:automation` - Automazione per ricerca lavoro tramite AI
+- [OpenOSINT](https://github.com/OpenOSINT/OpenOSINT) `#archetype:operational_pipeline #purpose:automation` - Tool OSINT integrato con AI
+- [Alexandrie](https://github.com/Smaug6739/Alexandrie) `#archetype:operational_pipeline #purpose:automation` - Gestore di librerie e memoria per AI
+- [OpenKB](https://github.com/VectifyAI/OpenKB) `#archetype:operational_pipeline #purpose:automation` - Knowledge Base open source per RAG
+- [PageIndex](https://github.com/VectifyAI/PageIndex) `#archetype:operational_pipeline #purpose:automation` - Strumento di indicizzazione vettoriale
+- [Agentic AI Landscape](https://github.com/antgroup/agentic-ai-landscape) `#archetype:operational_pipeline #purpose:automation` - Mappa e raccolta dell'ecosistema agentico
+- [Crucix](https://github.com/calesthio/Crucix) `#archetype:operational_pipeline #purpose:automation` - Tool sperimentale
+- [OpenMontage](https://github.com/calesthio/OpenMontage) `#archetype:operational_pipeline #purpose:automation` - Tool per manipolazione media
+- [Headroom](https://github.com/headroomlabs-ai/headroom) `#archetype:operational_pipeline #purpose:automation` - Piattaforma AI integrata
+- [SciWrite](https://github.com/labarba/sciwrite) `#archetype:operational_pipeline #purpose:automation` - Tool AI per scrittura scientifica
+- [Open Notebook](https://github.com/lfnovo/open-notebook) `#archetype:operational_pipeline #purpose:automation` - Ambiente di notebook sperimentale
+- [Guild](https://github.com/mathomhaus/guild) `#archetype:operational_pipeline #purpose:automation` - Sistema di orchestrazione task
+- [Memanto](https://github.com/moorcheh-ai/memanto) `#archetype:operational_pipeline #purpose:automation` - Tool di memorizzazione AI
+- [CLI Printing Press](https://github.com/mvanhorn/cli-printing-press) `#archetype:operational_pipeline #purpose:automation` - Automazione per pubblicazione via terminale
+- [OpenDataLoader PDF](https://github.com/opendataloader-project/opendataloader-pdf) `#archetype:operational_pipeline #purpose:automation` - Estrattore di testo da PDF per RAG
+- [Heretic](https://github.com/p-e-w/heretic) `#archetype:operational_pipeline #purpose:automation` - Tool e framework sperimentale
+- [Odysseus](https://github.com/pewdiepie-archdaemon/odysseus) `#archetype:operational_pipeline #purpose:automation` - Tool di navigazione autonoma per agenti
+- [AI Engineering From Scratch](https://github.com/rohitg00/ai-engineering-from-scratch) `#archetype:operational_pipeline #purpose:automation` - Guida e codice per l'ingegneria AI
+- [TDoc](https://github.com/serenakeyitan/tdoc) `#archetype:operational_pipeline #purpose:automation` - Strumento di generazione documentazione
+- [Supertonic](https://github.com/supertone-inc/supertonic) `#archetype:operational_pipeline #purpose:automation` - Tool AI per l'audio
+- [https://pinperepette.github.io/signal.pirate/articoli/l-agente-non-ha-una-forma.html?t=d](https://pinperepette.github.io/signal.pirate/articoli/l-agente-non-ha-una-forma.html?t=d) `#archetype:operational_pipeline #purpose:automation` - Articolo: L'Agente non ha una forma
+- [https://www.langchain.com/blog/the-anatomy-of-an-agent-harness#can-someone-please-define-a-harness](https://www.langchain.com/blog/the-anatomy-of-an-agent-harness#can-someone-please-define-a-harness) `#archetype:operational_pipeline #purpose:automation` - Articolo che definisce Agent Harness
+- [https://www.smartworld.it/news/gemini-memoria-persistente-import-chat-chatgpt-claude.html](https://www.smartworld.it/news/gemini-memoria-persistente-import-chat-chatgpt-claude.html) `#archetype:operational_pipeline #purpose:automation` - Articolo: Gemini porta la memoria persistente in Italia e permette di importare le chat da ChatGPT e Claude
+- [https://agentsfromscratch.com/](https://agentsfromscratch.com/) `#archetype:operational_pipeline #purpose:automation` - Learn to build AI agents locally without frameworks
 
 
 ---
@@ -261,8 +261,8 @@ This file contains platforms, multi-agent frameworks, and complex orchestration 
 
 This file contains huge curated directories and "Awesome" lists of resources.
 
-- [Awesome Agent Skills](https://github.com/VoltAgent/awesome-agent-skills) - Collezione di skill per agenti AI #collection
-- [Awesome Harness Engineering](https://github.com/walkinglabs/awesome-harness-engineering) - Risorse, articoli e tool per la costruzione di AI harness #collection
-- [Awesome Public Datasets](https://github.com/awesomedata/awesome-public-datasets) - Dataset pubblici per addestramento e validazione #collection
-- [Awesome AI Security](https://github.com/ottosulin/awesome-ai-security) - Collezione di risorse sulla sicurezza AI #collection
-- [Awesome AI OSINT](https://github.com/ubikron/Awesome-AI-OSINT) - Risorse su Open Source Intelligence con AI #collection
+- [Awesome Agent Skills](https://github.com/VoltAgent/awesome-agent-skills) `#archetype:operational_pipeline #purpose:automation` - Collezione di skill per agenti AI #collection
+- [Awesome Harness Engineering](https://github.com/walkinglabs/awesome-harness-engineering) `#archetype:operational_pipeline #purpose:automation` - Risorse, articoli e tool per la costruzione di AI harness #collection
+- [Awesome Public Datasets](https://github.com/awesomedata/awesome-public-datasets) `#archetype:operational_pipeline #purpose:automation` - Dataset pubblici per addestramento e validazione #collection
+- [Awesome AI Security](https://github.com/ottosulin/awesome-ai-security) `#archetype:operational_pipeline #purpose:automation` - Collezione di risorse sulla sicurezza AI #collection
+- [Awesome AI OSINT](https://github.com/ubikron/Awesome-AI-OSINT) `#archetype:operational_pipeline #purpose:automation` - Risorse su Open Source Intelligence con AI #collection
