@@ -87,3 +87,23 @@ The Architect, after the Triage interview, identifies which of these Archetypes 
 - **Suggested Core Skills & Tools**:
   - `Google Workspace MCP` (for Calendar and Gmail integration)
   - `CSV/Excel Processing Skill`
+
+## Archetype 5: Travel & Logistics Planner (Travel Agent)
+- **Tag**: `#archetype:travel_agent`, `#purpose:logistics`, `#domain:travel`
+- **Objective**: Research and plan complex travel itineraries, evaluate logistic feasibility, and produce a verified, robust travel plan using Native Roles.
+- **Pipeline (ICM Folders)**:
+  - `0 - SYSTEM/`
+    - `0.1 - RULES/`
+    - `0.2 - SKILLS/`
+      - `tmp/`
+  - `1 - REQUIREMENTS/` (User preferences, dates, budgets)
+  - `2 - RESEARCH/` (Flight, hotel, and location data)
+  - `3 - PLANNING/` (Draft itineraries and logistic checks)
+  - `4 - ITINERARIES/` (Final verified travel plans)
+- **Workflows (Generated Sub-Agents)**:
+  - **The Curator**: Gathers and filters raw information about destinations, flights, and accommodations in `RESEARCH/`.
+  - **The Devil**: Actively finds flaws in the proposed itinerary (e.g., tight layovers) in `PLANNING/`.
+  - **The Auditor**: Ensures the final plan strictly adheres to constraints and compiles it in `ITINERARIES/`.
+- **Suggested Core Skills & Tools**:
+  - `Flight/Hotel API MCP Server`
+  - `Weather API MCP Server`
