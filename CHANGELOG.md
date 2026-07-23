@@ -24,7 +24,7 @@ Il paradigma "The Architect Project" (framework monolitico) è stato deprecato. 
 - Contiene `architecture_philosophy.md` (la transizione da The Architect Project).
 
 ## Principi Guida Ereditati (Memoria Storica)
-Tutto il sistema si fonda sui principi di **Jake Van Clief**:
+Tutto il sistema si fonda sui principi fondamentali dell'**ICM**:
 1. **Folders over Agents**: Se un problema può essere risolto spostando un file in una cartella con un `CONTEXT.md`, non serve un framework.
 2. **La morte dei Silos**: L'architettura è il filesystem. Trasparenza totale.
 3. **Code-as-Action**: Per compiti computazionali complessi, gli agenti scrivono ed eseguono script temporanei in `0-SISTEMA/tmp/`, mantenendo intatta la cartella delle Skill.

@@ -42,7 +42,7 @@ This file contains resources designed for human study and learning about Agentic
   - **✅ Pros**: Mathematically/theoretically formalizes why immense prompts fail.
   - **❌ Cons**: Very verbose and academic.
   - **💡 Recommendations**: Extract metrics from here to validate the effectiveness of memory files.
-- **[ICM: Interpretable Context Methodology (Folder Structure as Agent Architecture)](https://arxiv.org/pdf/2603.16021v2)** `#learning:paper #purpose:research`: Paper (Van Clief & McDermott) on using the file system and Markdown as orchestration code.
+- **[ICM: Interpretable Context Methodology (Folder Structure as Agent Architecture)](#)** `#learning:paper #purpose:research`: Methodology on using the file system and Markdown as orchestration code.
   - **✅ Pros**: The revolutionary paradigm for the "Wiki LLM". Eliminates the need for complex Python scripts to manage agent state.
   - **❌ Cons**: Requires a radical mindset shift in directory management.
   - **💡 Recommendations**: Use this as a *manifesto* for a "Second Brain". Always pair it with the [Interpreted-Context-Methdology](https://github.com/RinDig/Interpreted-Context-Methdology) repository.
