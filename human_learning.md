@@ -36,6 +36,9 @@ This file contains resources designed for human study and learning about Agentic
   - **✅ Pros**: Crucial in high-security/intelligence environments to prevent leaks of classified data.
   - **❌ Cons**: Can incorrectly block or obfuscate data useful to the context.
   - **💡 Recommendations**: Implement as a security standard if using Cloud APIs. For zero risk, however, use a local approach with private models and *OmniRoute*.
+- **TryHackMe OSINT Guides & SOC Analyst Roadmaps** `#learning:course #purpose:research`: Risorse educative diffuse, eccellenti per strutturare la forma mentis di un analista di intelligence (ricerca di fonti, correlazione eventi).
+  - **✅ Pros**: Insegnano metodologie di pensiero laterale e deduttivo (inestimabili per progettare workflow OSINT agentici).
+  - **💡 Recommendations**: Da studiare per modellare le istruzioni di comportamento per agenti analisti.
 
 ## Papers & Research
 - **[Context Engineering 2.0](https://arxiv.org/pdf/2510.26493v1)** `#learning:paper #purpose:research`: Paper on context management methodology.
@@ -63,6 +66,14 @@ This section covers architectural frameworks and mental models extracted from in
   - **What it is**: The design of the environment surrounding the agent. Instead of asking the agent to "do everything in a single prompt", *Loop Engineering* involves an external system (a timer, a *harness*, a script, or framework like Goose) that retrieves work, assigns it to the agent, passes the output to a second validator agent, and consolidates results autonomously (Unattended AI).
   - **✅ Pros**: Allows safe unsupervised execution and breaks down titanic tasks into digestible, verifiable cycles.
   - **💡 Recommendations**: Never delegate repetition logic (while-loop) to the LLM itself. Build external pipelines that "nudge" the agent at each iterative step.
+- **[MASPOB (Multi-Agent System Prompt Optimization)]**
+  - **What it is**: Framework teorico per ottimizzare le istruzioni in scenari in cui più agenti interagiscono cooperativamente tra loro.
+  - **✅ Pros**: Riduce il "rumore" comunicativo tra agenti e aumenta la stabilità dei task complessi.
+  - **💡 Recommendations**: Essenziale se si sviluppano team multi-agente in CAMEL-AI o PraisonAI.
+- **[MAST (Multi-Agent System Taxonomy of Failures)]**
+  - **What it is**: Tassonomia dei fallimenti tipici nei sistemi agentici, come le "allucinazioni di gruppo" o i loop infiniti.
+  - **✅ Pros**: Offre un vocabolario standard per il debugging di comportamenti anomali.
+  - **💡 Recommendations**: Leggere prima di lanciare la prima flotta agentica per saper diagnosticare i problemi.
 
 ## Articles & Maps
 - **[Andrej Karpathy's LLM Wiki pattern](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f)** `#learning:article #purpose:inspiration`: Pattern for building LLM-maintained knowledge bases.

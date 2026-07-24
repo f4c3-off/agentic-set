@@ -12,6 +12,7 @@ Every file in this repository is not a simple list of links, but a **decision ma
 If you need:
 
 - **🧠 AI Second Brain (Knowledge Factory)** -> Read [ai_second_brain.md](./ai_second_brain.md). Contains the operational toolbelt (Agent Reach, MinerU, Graphify) and text patterns (Fabric).
+- **🌐 Software Ecosystem & Frameworks** -> Read [software_ecosystem.md](./software_ecosystem.md). A directory of standalone frameworks, platforms, orchestrators, and token optimizers (STORM, Orca, Headroom).
 - **📝 Obsidian Plugins** -> Read [obsidian_plugins.md](./obsidian_plugins.md). Recommended plugins to structure the Second Brain and interface it with local LLMs.
 - **📚 Human Learning & Theory** -> Read [human_learning.md](./human_learning.md) and [the_architect_project_architecture_philosophy.md](./the_architect_project_architecture_philosophy.md). The theory behind ICM, system history, and loop engineering.
 - **⚙️ Stack Configurations** -> Read [stack_configurations.md](./stack_configurations.md). The architectural blueprints (e.g., "Intelligence OS") used by The Architect to build folders.
