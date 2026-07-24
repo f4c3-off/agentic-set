@@ -62,8 +62,11 @@ def spider_github(repo_url):
             path = item['path']
             # We filter for useful files
             if path.endswith('.md') or path.endswith('.py') or path.endswith('.txt') or path.endswith('.json'):
+                name_lower = os.path.basename(path).lower()
+                if name_lower in ['package.json', 'package-lock.json', 'tsconfig.json', 'tsconfig.node.json']:
+                    continue
                 # Ignore standard markdown files at root if they are just docs
-                if path.lower() in ['readme.md', 'contributing.md', 'license.md'] and '/' not in path:
+                if name_lower in ['readme.md', 'contributing.md', 'license.md'] and '/' not in path:
                     continue
                 name = os.path.basename(path)
                 keywords = generate_keywords(path)
