@@ -48,9 +48,11 @@ def spider_github(repo_url):
         print(f"Error fetching repo tree: {e}")
         return None
         
+    import datetime
     out_lines = []
     out_lines.append(f"# {repo}")
     out_lines.append(f"**Repository Originale**: [{clean_url}]({clean_url})")
+    out_lines.append(f"**Ultimo Aggiornamento**: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     out_lines.append(f"**Descrizione**: {description}\n")
     out_lines.append(f"## Indice delle Skill e Contenuti")
     
