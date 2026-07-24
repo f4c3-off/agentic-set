@@ -95,18 +95,9 @@
 - **GitHub MCP** `#tool:mcp`: Per gestione issue, PR e CI/CD.
 
 ### Tool & Script Collections
-- **[agentic-awesome-skills (by sickn33)](collections/agentic-awesome-skills.md)** `#tool:collection`: Control plane locale per agenti con oltre 1.900 skill agentiche, discovery, e supporto MCP locale (compatibile con Claude Code, Cursor, Gemini).
-- **[skills (by mattpocock)](collections/skills.md)** `#tool:collection`: Collezione di skill pratiche da installare (via CLI o plugin) progettata "per veri ingegneri software" (TDD, review architetturale, debugging).
-- **[OneCLI](https://github.com/onecli)** `#tool:security`: OSS credential gateway che mantiene i secret (chiavi API) fuori dalla vista diretta degli agenti AI.
-- **[Claude Skills Collection](collections/claude-skills-collection.md) and [Agent Skills](collections/agent-skills.md)** `#tool:collection`: Script Bash, File System, Git.
-- **[Application Skills](collections/application-skills.md)** `#tool:collection`: Macros to control desktop apps via UI scripts.
-- **[AutoSkills](collections/autoskills.md)** `#tool:collection`: Instant stack setup.
-- **Prompt Collections (Prompts.chat, Agentic Set, Anthropic Library, LangChain Hub)** `#tool:collection`: Massive databases for setup configurations and roles.
-- **[Awesome MCP Servers (by punkpeye)](collections/awesome-mcp-servers.md)** `#tool:collection`: La lista curata della community più popolare per i server MCP (Model Context Protocol).
-- **[Official MCP Servers (by modelcontextprotocol)](collections/servers.md)** `#tool:collection`: Implementazioni ufficiali e di riferimento dei server MCP.
-- **[Awesome AI Agents 2026 (by caramaschiHG)](collections/awesome-ai-agents-2026.md)** `#tool:collection`: Lista iper-aggiornata al 2026 con oltre 300 risorse, coding agents e framework (LangChain, CrewAI, AutoGen).
-- **[Fabric](https://github.com/danielmiessler/fabric)** `#tool:collection`: The ultimate CLI framework for the Bash ecosystem. Estrai i pattern utili in plain text.
-- **[Prompt Master](https://github.com/nidhinjs/prompt-master)** `#tool:infrastructure`: Gestione e test di collezioni di prompt (versioning per prompt di intelligence e accademici).
+L'intero ecosistema open-source di Skill e Server MCP è centralizzato e indicizzato nel nostro **Global Agentic Registry**, generato automaticamente dallo Spider 3.0.
+
+- [**Global Agentic Registry**](collections/global_registry.md): Database unificato contenente decine di migliaia di Agentic Skills, MCP Servers e Frameworks (estratti da repo come *agentic-awesome-skills*, *fabric*, *awesome-mcp-servers*, ecc.), ordinati per popolarità e interrogabili direttamente.
 
 ### Utilities Core
 - **[Aict](https://github.com/aict-tools/aict)** `#tool:utility`: Unix coreutils native JSON/XML output. Elimina la necessità per l'agente di usare `sed/awk` su log complessi.

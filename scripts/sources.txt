@@ -1,0 +1,11 @@
+https://github.com/sickn33/agentic-awesome-skills
+https://github.com/punkpeye/awesome-mcp-servers
+https://github.com/modelcontextprotocol/servers
+https://github.com/caramaschiHG/awesome-ai-agents-2026
+https://github.com/mattpocock/skills
+https://github.com/abubakarsiddik31/claude-skills-collection
+https://github.com/addyosmani/agent-skills
+https://github.com/membranedev/application-skills
+https://github.com/midudev/autoskills
+https://github.com/danielmiessler/fabric
+https://github.com/nidhinjs/prompt-master

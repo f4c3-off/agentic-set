@@ -1,107 +1,240 @@
 #!/usr/bin/env python3
-import sys
 import os
+import re
 import json
 import urllib.request
-import re
+import urllib.error
+import subprocess
+import shutil
+import datetime
 
-def generate_keywords(path):
-    # Extract words from the path to use as keywords
+# --- CONFIGURATION ---
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+COLLECTIONS_DIR = os.path.join(os.path.dirname(SCRIPT_DIR), "collections")
+REGISTRY_PATH = os.path.join(COLLECTIONS_DIR, "registry.json")
+GLOBAL_INDEX_PATH = os.path.join(COLLECTIONS_DIR, "global_registry.md")
+SOURCES_PATH = os.path.join(SCRIPT_DIR, "sources.txt")
+
+os.makedirs(COLLECTIONS_DIR, exist_ok=True)
+
+def load_registry():
+    if os.path.exists(REGISTRY_PATH):
+        try:
+            with open(REGISTRY_PATH, "r") as f:
+                return json.load(f)
+        except Exception:
+            pass
+    return {}
+
+def save_registry(registry):
+    with open(REGISTRY_PATH, "w") as f:
+        json.dump(registry, f, indent=2)
+
+def generate_keywords(path, content=""):
     words = re.findall(r'[a-zA-Z0-9]+', path.lower())
-    # filter some generic words
-    stopwords = {'md', 'txt', 'skills', 'prompts', 'src', 'main', 'master', 'tree', 'py', 'json', 'github', 'com'}
+    stopwords = {'md', 'txt', 'skills', 'prompts', 'src', 'main', 'master', 'tree', 'py', 'json', 'github', 'com', 'commands', 'agents', 'rules', 'docs', 'tools', 'plugin'}
     keywords = [f"#{w}" for w in set(words) if w not in stopwords and len(w) > 2]
     return " ".join(keywords)
 
-def spider_github(repo_url):
-    # Extract owner and repo from url (e.g. https://github.com/sickn33/agentic-awesome-skills)
+def extract_description(content):
+    # Try to find "When to Use" or "Description" headers
+    match = re.search(r'##\s*(?:When to Use|Description|Overview)\s*(.*?)(?=\n##|\Z)', content, re.IGNORECASE | re.DOTALL)
+    if match:
+        desc = match.group(1).strip()
+        # Take the first paragraph
+        return desc.split('\n\n')[0].replace('\n', ' ')
+    
+    # Try YAML frontmatter
+    match = re.search(r'^---\s*\n(.*?)\n---\s*\n', content, re.DOTALL)
+    if match:
+        yaml_content = match.group(1)
+        desc_match = re.search(r'description:\s*["\']?(.*?)["\']?$', yaml_content, re.IGNORECASE | re.MULTILINE)
+        if desc_match:
+            return desc_match.group(1).strip()
+            
+    # Fallback to first non-empty line that isn't a header
+    lines = content.split('\n')
+    for line in lines:
+        line = line.strip()
+        if line and not line.startswith('#') and not line.startswith('!['):
+            return line[:200] + "..." if len(line) > 200 else line
+            
+    return "No description available."
+
+def extract_json_description(content):
+    try:
+        data = json.loads(content)
+        if isinstance(data, dict):
+            desc = data.get('description') or data.get('name') or "Configuration file."
+            return str(desc)[:200]
+    except:
+        pass
+    return "JSON Configuration."
+
+def process_repo(repo_url, registry):
     match = re.search(r'github\.com/([^/]+)/([^/]+)', repo_url)
     if not match:
-        print("Invalid GitHub URL")
-        return None
+        print(f"Invalid GitHub URL: {repo_url}")
+        return
     owner, repo = match.groups()
     repo = repo.replace('.git', '')
     
-    # Clean URL of any /tree/main/skills paths
-    clean_url = f"https://github.com/{owner}/{repo}"
+    print(f"Processing {owner}/{repo}...")
     
-    # Try fetching default branch tree
-    # First get repo info to find default branch
+    # 1. Fetch repo data
     try:
         req = urllib.request.Request(f"https://api.github.com/repos/{owner}/{repo}", headers={'User-Agent': 'Mozilla/5.0'})
         with urllib.request.urlopen(req) as response:
             repo_data = json.loads(response.read().decode())
             default_branch = repo_data.get('default_branch', 'main')
             description = repo_data.get('description', 'No description provided.')
+            stars = repo_data.get('stargazers_count', 0)
     except Exception as e:
-        print(f"Error fetching repo data: {e}")
-        default_branch = 'main'
-        description = "External collection."
-        
+        print(f"  Error fetching repo data: {e}")
+        return
+
+    # 2. Fetch latest commit hash
     try:
-        # Fetch recursive tree
-        req = urllib.request.Request(f"https://api.github.com/repos/{owner}/{repo}/git/trees/{default_branch}?recursive=1", headers={'User-Agent': 'Mozilla/5.0'})
+        req = urllib.request.Request(f"https://api.github.com/repos/{owner}/{repo}/commits/{default_branch}", headers={'User-Agent': 'Mozilla/5.0'})
         with urllib.request.urlopen(req) as response:
-            tree_data = json.loads(response.read().decode())
-            tree = tree_data.get('tree', [])
+            commit_data = json.loads(response.read().decode())
+            latest_commit = commit_data.get('sha', '')
     except Exception as e:
-        print(f"Error fetching repo tree: {e}")
-        return None
+        print(f"  Error fetching commit data: {e}")
+        return
         
-    import datetime
-    out_lines = []
-    out_lines.append(f"# {repo}")
-    out_lines.append(f"**Repository Originale**: [{clean_url}]({clean_url})")
-    out_lines.append(f"**Ultimo Aggiornamento**: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-    out_lines.append(f"**Descrizione**: {description}\n")
-    out_lines.append(f"## Indice delle Skill e Contenuti")
+    repo_key = f"{owner}/{repo}"
+    repo_entry = registry.get(repo_key, {})
     
-    count = 0
-    for item in tree:
-        if item['type'] == 'blob':
-            path = item['path']
-            # We filter for useful files
-            if path.endswith('.md') or path.endswith('.py') or path.endswith('.txt') or path.endswith('.json'):
-                name_lower = os.path.basename(path).lower()
-                if name_lower in ['package.json', 'package-lock.json', 'tsconfig.json', 'tsconfig.node.json']:
-                    continue
-                # Ignore standard markdown files at root if they are just docs
-                if name_lower in ['readme.md', 'contributing.md', 'license.md'] and '/' not in path:
-                    continue
-                name = os.path.basename(path)
-                keywords = generate_keywords(path)
-                raw_url = f"https://raw.githubusercontent.com/{owner}/{repo}/{default_branch}/{path}"
-                out_lines.append(f"- [**{name}**]({raw_url}): Path -> `{path}`. **Keywords:** {keywords}")
-                count += 1
-                
-    if count == 0:
-        out_lines.append("- Nessun file rilevante trovato.")
+    if repo_entry.get("commit_hash") == latest_commit:
+        print(f"  -> No changes detected (Commit: {latest_commit[:7]}). Updating stars only.")
+        repo_entry["stars"] = stars
+        registry[repo_key] = repo_entry
+        return
         
-    return "\n".join(out_lines)
+    print(f"  -> Changes detected. Cloning repository...")
+    tmp_dir = os.path.join(SCRIPT_DIR, f"tmp_spider_{repo}_{latest_commit[:7]}")
+    
+    # Clone
+    if os.path.exists(tmp_dir):
+        shutil.rmtree(tmp_dir)
+    try:
+        subprocess.run(["git", "clone", "--depth", "1", "-b", default_branch, f"https://github.com/{owner}/{repo}", tmp_dir], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    except subprocess.CalledProcessError:
+        print(f"  -> Failed to clone repository.")
+        return
+        
+    # Walk tree and parse
+    items = []
+    for root, dirs, files in os.walk(tmp_dir):
+        # Ignore .git
+        if '.git' in dirs:
+            dirs.remove('.git')
+            
+        for file in files:
+            path = os.path.join(root, file)
+            rel_path = os.path.relpath(path, tmp_dir)
+            name_lower = file.lower()
+            
+            if name_lower.endswith('.md') or name_lower in ['plugin.json', 'marketplace.json']:
+                if name_lower in ['readme.md', 'contributing.md', 'license.md'] and '/' not in rel_path:
+                    continue
+                    
+                with open(path, "r", encoding="utf-8", errors="ignore") as f:
+                    content = f.read()
+                    
+                if name_lower.endswith('.md'):
+                    item_desc = extract_description(content)
+                else:
+                    item_desc = extract_json_description(content)
+                    
+                raw_url = f"https://raw.githubusercontent.com/{owner}/{repo}/{default_branch}/{rel_path}"
+                keywords = generate_keywords(rel_path, content)
+                
+                is_mcp = 'mcp' in repo_key.lower() or 'mcp' in name_lower or 'server' in name_lower
+                category = "MCP Servers" if is_mcp else "Agentic Skills"
+                
+                items.append({
+                    "name": file,
+                    "rel_path": rel_path,
+                    "raw_url": raw_url,
+                    "description": item_desc,
+                    "keywords": keywords,
+                    "category": category
+                })
+                
+    # Update registry
+    registry[repo_key] = {
+        "description": description,
+        "stars": stars,
+        "commit_hash": latest_commit,
+        "url": f"https://github.com/{owner}/{repo}",
+        "updated_at": datetime.datetime.now().isoformat(),
+        "items": items
+    }
+    
+    # Cleanup
+    shutil.rmtree(tmp_dir)
+    print(f"  -> Processed {len(items)} items.")
+
+def build_global_registry(registry):
+    print("Building Global Registry...")
+    categories = {}
+    
+    for repo_key, repo_data in registry.items():
+        repo_stars = repo_data.get("stars", 0)
+        repo_url = repo_data.get("url", "")
+        
+        for item in repo_data.get("items", []):
+            cat = item["category"]
+            if cat not in categories:
+                categories[cat] = []
+            
+            item_copy = item.copy()
+            item_copy["repo_key"] = repo_key
+            item_copy["repo_stars"] = repo_stars
+            item_copy["repo_url"] = repo_url
+            categories[cat].append(item_copy)
+            
+    out_lines = []
+    out_lines.append("# 🌐 Global Agentic Registry")
+    out_lines.append(f"**Ultimo Aggiornamento Globale**: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    out_lines.append("> Il database centralizzato per MCP Servers e Agentic Skills, generato da Spider Indexer 3.0.\n")
+    
+    for cat, items in sorted(categories.items()):
+        out_lines.append(f"## 🛠️ {cat}")
+        out_lines.append("*(Ordinati per Popolarità / Stelle GitHub del repository di origine)*\n")
+        
+        # Sort items by repo_stars descending
+        items.sort(key=lambda x: x["repo_stars"], reverse=True)
+        
+        for item in items:
+            out_lines.append(f"### {item['name']}")
+            out_lines.append(f"**Sorgente**: [Link RAW GitHub]({item['raw_url']}) (Path: `{item['rel_path']}`)")
+            out_lines.append(f"**Repo Origine**: [{item['repo_key']}]({item['repo_url']}) (⭐ {item['repo_stars']})")
+            out_lines.append(f"**Descrizione/When to Use**: {item['description']}")
+            out_lines.append(f"**Keywords**: {item['keywords']}\n")
+            
+    with open(GLOBAL_INDEX_PATH, "w") as f:
+        f.write("\n".join(out_lines))
+    print(f"Global Registry written to {GLOBAL_INDEX_PATH}")
+
+def main():
+    if not os.path.exists(SOURCES_PATH):
+        print(f"Sources file not found at {SOURCES_PATH}")
+        return
+        
+    with open(SOURCES_PATH, "r") as f:
+        urls = [line.strip() for line in f if line.strip() and not line.startswith('#')]
+        
+    registry = load_registry()
+    
+    for url in urls:
+        process_repo(url, registry)
+        # Save incrementally
+        save_registry(registry)
+        
+    build_global_registry(registry)
 
 if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        print("Usage: python3 spider_indexer.py <github_url>")
-        sys.exit(1)
-        
-    url = sys.argv[1]
-    match = re.search(r'github\.com/([^/]+)/([^/]+)', url)
-    if not match:
-        print("Invalid GitHub URL")
-        sys.exit(1)
-    
-    owner, repo = match.groups()
-    repo = repo.replace('.git', '')
-    
-    print(f"Spidering {url}...")
-    markdown_content = spider_github(url)
-    
-    if markdown_content:
-        out_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "collections")
-        os.makedirs(out_dir, exist_ok=True)
-        out_path = os.path.join(out_dir, f"{repo}.md")
-        with open(out_path, "w") as f:
-            f.write(markdown_content)
-        print(f"Success! Indice generato in {out_path}")
-    else:
-        print("Failed to generate index.")
+    main()
