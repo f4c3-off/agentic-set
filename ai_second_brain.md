@@ -102,6 +102,9 @@
 - **[Application Skills](collections/application-skills.md)** `#tool:collection`: Macros to control desktop apps via UI scripts.
 - **[AutoSkills](collections/autoskills.md)** `#tool:collection`: Instant stack setup.
 - **Prompt Collections (Prompts.chat, Agentic Set, Anthropic Library, LangChain Hub)** `#tool:collection`: Massive databases for setup configurations and roles.
+- **[Awesome MCP Servers (by punkpeye)](collections/awesome-mcp-servers.md)** `#tool:collection`: La lista curata della community più popolare per i server MCP (Model Context Protocol).
+- **[Official MCP Servers (by modelcontextprotocol)](collections/servers.md)** `#tool:collection`: Implementazioni ufficiali e di riferimento dei server MCP.
+- **[Awesome AI Agents 2026 (by caramaschiHG)](collections/awesome-ai-agents-2026.md)** `#tool:collection`: Lista iper-aggiornata al 2026 con oltre 300 risorse, coding agents e framework (LangChain, CrewAI, AutoGen).
 - **[Fabric](https://github.com/danielmiessler/fabric)** `#tool:collection`: The ultimate CLI framework for the Bash ecosystem. Estrai i pattern utili in plain text.
 - **[Prompt Master](https://github.com/nidhinjs/prompt-master)** `#tool:infrastructure`: Gestione e test di collezioni di prompt (versioning per prompt di intelligence e accademici).
 
