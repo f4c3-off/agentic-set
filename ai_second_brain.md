@@ -46,7 +46,7 @@
 
 - **[Second Brain](https://github.com/NicholasSpisak/second-brain)** `#workflow:knowledge_base`
 - **[Ariadne](https://github.com/pariyar07/ariadne)** `#workflow:knowledge_base`: Agents can map and use complex Obsidian architectures.
-- **[ICM Architect and ICM Core Repo](https://github.com/RinDig/Interpreted-Context-Methdology)** `#workflow:knowledge_base`: Transforms standard file folders into an environment natively understandable by AI.
+- **[The Architect (Project SEED Core)](https://github.com/RinDig/THE-ARCHITECT)** `#workflow:knowledge_base`: L'implementazione pratica del Progetto SEED. Incorpora l'evoluzione della teoria ICM per trasformare cartelle standard in un ambiente nativamente comprensibile dall'AI.
 - **[Obsidian Skills (gmickel & kepano)](https://github.com/kepano/obsidian-skills)** `#workflow:knowledge_base`: Teaches the AI to handle JSON Canvas.
 - **[Graphify](https://github.com/Graphify-Labs/graphify)** `#workflow:knowledge_base`: Drastic token reduction, semantic correlation understanding within a true local Knowledge Graph.
 - **[Agentic Stack](https://github.com/codejunkie99/agentic-stack)** `#workflow:knowledge_base`: True episodic memory (`lessons.jsonl`); agent doesn't make the same mistake twice.
