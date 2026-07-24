@@ -95,7 +95,7 @@
 - **GitHub MCP** `#tool:mcp`: Per gestione issue, PR e CI/CD.
 
 ### Tool & Script Collections
-- **[agentic-awesome-skills (by sickn33)](https://github.com/sickn33/agentic-awesome-skills)** `#tool:collection`: Control plane locale per agenti con oltre 1.900 skill agentiche, discovery, e supporto MCP locale (compatibile con Claude Code, Cursor, Gemini).
+- **[agentic-awesome-skills (by sickn33)](collections/agentic-awesome-skills.md)** `#tool:collection`: Control plane locale per agenti con oltre 1.900 skill agentiche, discovery, e supporto MCP locale (compatibile con Claude Code, Cursor, Gemini).
 - **[skills (by mattpocock)](https://github.com/mattpocock/skills)** `#tool:collection`: Collezione di skill pratiche da installare (via CLI o plugin) progettata "per veri ingegneri software" (TDD, review architetturale, debugging).
 - **[OneCLI](https://github.com/onecli)** `#tool:security`: OSS credential gateway che mantiene i secret (chiavi API) fuori dalla vista diretta degli agenti AI.
 - **[Claude Skills Collection](https://github.com/abubakarsiddik31/claude-skills-collection) and [Agent Skills](https://github.com/addyosmani/agent-skills)** `#tool:collection`: Script Bash, File System, Git.

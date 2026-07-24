@@ -27,7 +27,7 @@ The Architect, after the Triage interview, identifies which of these Archetypes 
   - **Critic**: Applies the `analyze_claims` (Fabric) pattern to find logical fallacies in documents in `ANALYSIS`.
   - **Librarian**: Operates in `WIKI/` to connect the dots, update indices (MOC), and compile the glossary.
 - **Skill Discovery Tags (Dynamic Tool Search)**: 
-  - `Tags to search`: `#workflow:osint #domain:osint`, `#workflow:analytical_research #domain:osint`, `#workflow:knowledge_base`, `#workflow:raw_ingestion`
+  - `Tags to search`: `#workflow:knowledge_base`, `#workflow:osint`, `#workflow:raw_ingestion`, `#role:data_gathering`, `#workflow:analytical_research`
   - `Source repository`: [https://github.com/f4c3-off/agentic-set](https://github.com/f4c3-off/agentic-set)
 
 ## Archetype 2: Operational Pipeline (Code & Dev)
@@ -48,6 +48,8 @@ The Architect, after the Triage interview, identifies which of these Archetypes 
 - **Suggested Core Skills & Tools**:
   - `Codebase Memory MCP` (To read the context of complex files)
   - `jcode` (Rust code executor)
+- **Skill Discovery Tags (Dynamic Tool Search)**:
+  - `Tags to search`: `#archetype:operational_pipeline`, `#tool:infrastructure`, `#workflow:production`, `#tool:mcp`
 
 ## Archetype 3: Audit & Security
 - **Tag**: `#archetype:cybersecurity #purpose:audit`, `#purpose:audit`
@@ -67,6 +69,8 @@ The Architect, after the Triage interview, identifies which of these Archetypes 
 - **Suggested Core Skills & Tools**:
   - `OWASP OSINT Agent` 
   - `Fabric (create_threat_model)`
+- **Skill Discovery Tags (Dynamic Tool Search)**:
+  - `Tags to search`: `#purpose:audit`, `#tool:security`, `#role:security`
 
 ## Archetype 4: Business Operations & Management (ERP/CRM OS)
 - **Tag**: `#archetype:business_operations`, `#purpose:management`, `#domain:administration`
@@ -87,6 +91,8 @@ The Architect, after the Triage interview, identifies which of these Archetypes 
 - **Suggested Core Skills & Tools**:
   - `Google Workspace MCP` (for Calendar and Gmail integration)
   - `CSV/Excel Processing Skill`
+- **Skill Discovery Tags (Dynamic Tool Search)**:
+  - `Tags to search`: `#tool:automation`, `#tool:utility`, `#purpose:support`
 
 ## Archetype 5: Travel & Logistics Planner (Travel Agent)
 - **Tag**: `#archetype:travel_agent`, `#purpose:logistics`, `#domain:travel`
@@ -107,3 +113,5 @@ The Architect, after the Triage interview, identifies which of these Archetypes 
 - **Suggested Core Skills & Tools**:
   - `Flight/Hotel API MCP Server`
   - `Weather API MCP Server`
+- **Skill Discovery Tags (Dynamic Tool Search)**:
+  - `Tags to search`: `#tool:api`, `#tool:extraction`, `#workflow:refinement`
