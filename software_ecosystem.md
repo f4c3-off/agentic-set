@@ -56,6 +56,7 @@ Questi framework servono a costruire o gestire flotte di agenti autonomi:
 
 ## 2. 🎮 Framework per la Gestione di Agenti (IDE & Harness)
 Strumenti che gestiscono agenti locali o flotte parallele:
+- **[Open WebUI](https://github.com/open-webui/open-webui)**: (Native Graphical ICM) Ambiente web che permette di mappare visivamente la metodologia SEED/ICM. I `CONTEXT.md` diventano System Prompts dei *Custom Models*, le cartelle dati diventano *Knowledge Collections*, e i tools diventano *Skills*.
 - **[CAMEL-AI](https://github.com/camel-ai/camel)**: Un framework multi-agente avanzato e una piattaforma di ricerca open-source. Estremamente focalizzato sulle interazioni cooperative tra agenti (role-playing framework) per simulazioni complesse.
 - **[Bardeen AI](https://github.com/bardeen-ai)**: Piattaforma di automazione (browser-based) focalizzata sul workflow agentico per delegare all'AI task manuali all'interno del sistema operativo o browser.
 - **[stablyai/orca](https://github.com/stablyai/orca)** `#archetype:operational_pipeline`: Un Agent Development Environment (ADE) per gestire una flotta di agenti paralleli (Claude Code, Cursor, ecc.).
