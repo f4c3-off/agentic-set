@@ -96,11 +96,11 @@
 
 ### Tool & Script Collections
 - **[agentic-awesome-skills (by sickn33)](collections/agentic-awesome-skills.md)** `#tool:collection`: Control plane locale per agenti con oltre 1.900 skill agentiche, discovery, e supporto MCP locale (compatibile con Claude Code, Cursor, Gemini).
-- **[skills (by mattpocock)](https://github.com/mattpocock/skills)** `#tool:collection`: Collezione di skill pratiche da installare (via CLI o plugin) progettata "per veri ingegneri software" (TDD, review architetturale, debugging).
+- **[skills (by mattpocock)](collections/skills.md)** `#tool:collection`: Collezione di skill pratiche da installare (via CLI o plugin) progettata "per veri ingegneri software" (TDD, review architetturale, debugging).
 - **[OneCLI](https://github.com/onecli)** `#tool:security`: OSS credential gateway che mantiene i secret (chiavi API) fuori dalla vista diretta degli agenti AI.
-- **[Claude Skills Collection](https://github.com/abubakarsiddik31/claude-skills-collection) and [Agent Skills](https://github.com/addyosmani/agent-skills)** `#tool:collection`: Script Bash, File System, Git.
-- **[Application Skills](https://github.com/membranedev/application-skills)** `#tool:collection`: Macros to control desktop apps via UI scripts.
-- **[AutoSkills](https://github.com/midudev/autoskills)** `#tool:collection`: Instant stack setup.
+- **[Claude Skills Collection](collections/claude-skills-collection.md) and [Agent Skills](collections/agent-skills.md)** `#tool:collection`: Script Bash, File System, Git.
+- **[Application Skills](collections/application-skills.md)** `#tool:collection`: Macros to control desktop apps via UI scripts.
+- **[AutoSkills](collections/autoskills.md)** `#tool:collection`: Instant stack setup.
 - **Prompt Collections (Prompts.chat, Agentic Set, Anthropic Library, LangChain Hub)** `#tool:collection`: Massive databases for setup configurations and roles.
 - **[Fabric](https://github.com/danielmiessler/fabric)** `#tool:collection`: The ultimate CLI framework for the Bash ecosystem. Estrai i pattern utili in plain text.
 - **[Prompt Master](https://github.com/nidhinjs/prompt-master)** `#tool:infrastructure`: Gestione e test di collezioni di prompt (versioning per prompt di intelligence e accademici).
