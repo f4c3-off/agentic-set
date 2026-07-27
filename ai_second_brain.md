@@ -97,7 +97,7 @@
 ### Tool & Script Collections
 L'intero ecosistema open-source di Skill e Server MCP è centralizzato e indicizzato nel nostro **Global Agentic Registry**, generato automaticamente dallo Spider 3.0.
 
-- [**Global Agentic Registry**](collections/global_registry.md): Database unificato contenente decine di migliaia di Agentic Skills, MCP Servers e Frameworks (estratti da repo come *agentic-awesome-skills*, *fabric*, *awesome-mcp-servers*, ecc.), ordinati per popolarità e interrogabili direttamente.
+- [**Global Agentic Registry**](collections/global_registry.md) `#tool:collection` `#collection`: Database unificato contenente decine di migliaia di Agentic Skills, MCP Servers e Frameworks (estratti da repo come *agentic-awesome-skills*, *fabric*, *awesome-mcp-servers*, ecc.), ordinati per popolarità e interrogabili direttamente.
 
 ### Utilities Core
 - **[Aict](https://github.com/aict-tools/aict)** `#tool:utility`: Unix coreutils native JSON/XML output. Elimina la necessità per l'agente di usare `sed/awk` su log complessi.
