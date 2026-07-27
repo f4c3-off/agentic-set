@@ -132,6 +132,10 @@ def process_repo(repo_url, registry):
             dirs.remove('.git')
             
         for file in files:
+            # Ignore hidden files, Mac OS X AppleDouble files, etc.
+            if file.startswith('.'):
+                continue
+                
             path = os.path.join(root, file)
             rel_path = os.path.relpath(path, tmp_dir)
             name_lower = file.lower()
