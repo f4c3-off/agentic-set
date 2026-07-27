@@ -36,13 +36,20 @@ def generate_keywords(path, content=""):
     keywords = [f"#{w}" for w in set(words) if w not in stopwords and len(w) > 2]
     return " ".join(keywords)
 
+def clean_text(text):
+    # Remove ASCII box drawing characters
+    for char in ['│', '└', '─', '┌', '┐', '┘', '├', '┤', '┬', '┴', '┼', '`']:
+        text = text.replace(char, '')
+    # Normalize whitespace (replace multiple spaces/newlines with a single space)
+    return re.sub(r'\s+', ' ', text).strip()
+
 def extract_description(content):
     # Try to find specific descriptive headers
     match = re.search(r'#+\s*(?:When to Use|When to reach for it|What it does|Description|Overview|About|Summary)\s*(.*?)(?=\n#|\Z)', content, re.IGNORECASE | re.DOTALL)
     if match:
         desc = match.group(1).strip()
         if len(desc) > 10:
-            return desc.split('\n\n')[0].replace('\n', ' ')
+            return clean_text(desc.split('\n\n')[0])
     
     # Try YAML frontmatter
     match = re.search(r'^---\s*\n(.*?)\n---\s*\n', content, re.DOTALL)
@@ -50,7 +57,7 @@ def extract_description(content):
         yaml_content = match.group(1)
         desc_match = re.search(r'description:\s*["\']?(.*?)["\']?$', yaml_content, re.IGNORECASE | re.MULTILINE)
         if desc_match and len(desc_match.group(1).strip()) > 5:
-            return desc_match.group(1).strip()
+            return clean_text(desc_match.group(1))
             
     # Fallback to first non-empty paragraph that has some substance
     lines = content.split('\n')
@@ -60,6 +67,7 @@ def extract_description(content):
         if line and not line.startswith('#') and not line.startswith('![') and not line.startswith('<') and len(re.sub(r'[^a-zA-Z]', '', line)) > 15:
             # Clean up bolding/italics for the preview
             clean_line = line.replace('**', '').replace('__', '')
+            clean_line = clean_text(clean_line)
             return clean_line[:200] + "..." if len(clean_line) > 200 else clean_line
             
     return "No description available."
