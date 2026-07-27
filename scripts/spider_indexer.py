@@ -44,12 +44,16 @@ def clean_text(text):
     return re.sub(r'\s+', ' ', text).strip()
 
 def extract_description(content):
+    blacklist = ["this skill is applicable to execute the workflow or actions described in the overview"]
+    
     # Try to find specific descriptive headers
     match = re.search(r'#+\s*(?:When to Use|When to reach for it|What it does|Description|Overview|About|Summary)\s*(.*?)(?=\n#|\Z)', content, re.IGNORECASE | re.DOTALL)
     if match:
         desc = match.group(1).strip()
         if len(desc) > 10:
-            return clean_text(desc.split('\n\n')[0])
+            extracted = clean_text(desc.split('\n\n')[0])
+            if not any(b in extracted.lower() for b in blacklist):
+                return extracted
     
     # Try YAML frontmatter
     match = re.search(r'^---\s*\n(.*?)\n---\s*\n', content, re.DOTALL)
@@ -57,7 +61,9 @@ def extract_description(content):
         yaml_content = match.group(1)
         desc_match = re.search(r'description:\s*["\']?(.*?)["\']?$', yaml_content, re.IGNORECASE | re.MULTILINE)
         if desc_match and len(desc_match.group(1).strip()) > 5:
-            return clean_text(desc_match.group(1))
+            extracted = clean_text(desc_match.group(1))
+            if not any(b in extracted.lower() for b in blacklist):
+                return extracted
             
     # Fallback to first non-empty paragraph that has some substance
     lines = content.split('\n')
@@ -68,7 +74,8 @@ def extract_description(content):
             # Clean up bolding/italics for the preview
             clean_line = line.replace('**', '').replace('__', '')
             clean_line = clean_text(clean_line)
-            return clean_line[:200] + "..." if len(clean_line) > 200 else clean_line
+            if not any(b in clean_line.lower() for b in blacklist):
+                return clean_line[:200] + "..." if len(clean_line) > 200 else clean_line
             
     return "No description available."
 
