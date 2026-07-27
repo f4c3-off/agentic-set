@@ -36,6 +36,32 @@ def generate_keywords(path, content=""):
     keywords = [f"#{w}" for w in set(words) if w not in stopwords and len(w) > 2]
     return " ".join(keywords)
 
+def is_description_useful(text):
+    if text == "No description available.":
+        return True
+    
+    # Troppo corta?
+    if len(text) < 20:
+        return False
+        
+    # Troppe poche parole?
+    words = text.split()
+    if len(words) < 4:
+        return False
+        
+    # Troppi simboli matematici/codice rispetto al testo normale?
+    alpha_chars = sum(c.isalpha() for c in text)
+    if len(text) > 0 and (alpha_chars / len(text)) < 0.5:
+        return False
+        
+    # Controllo ripetizioni anomale (es. pattern di errore, loop)
+    if len(words) > 5:
+        for i in range(len(words) - 4):
+            if words[i] == words[i+1] == words[i+2] == words[i+3]:
+                return False
+                
+    return True
+
 def clean_text(text):
     # Remove ASCII box drawing characters
     for char in ['│', '└', '─', '┌', '┐', '┘', '├', '┤', '┬', '┴', '┼', '`']:
@@ -53,7 +79,8 @@ def extract_description(content):
         if len(desc) > 10:
             extracted = clean_text(desc.split('\n\n')[0])
             if not any(b in extracted.lower() for b in blacklist):
-                return extracted
+                if is_description_useful(extracted):
+                    return extracted
     
     # Try YAML frontmatter
     match = re.search(r'^---\s*\n(.*?)\n---\s*\n', content, re.DOTALL)
@@ -63,7 +90,8 @@ def extract_description(content):
         if desc_match and len(desc_match.group(1).strip()) > 5:
             extracted = clean_text(desc_match.group(1))
             if not any(b in extracted.lower() for b in blacklist):
-                return extracted
+                if is_description_useful(extracted):
+                    return extracted
             
     # Fallback to first non-empty paragraph that has some substance
     lines = content.split('\n')
@@ -75,7 +103,9 @@ def extract_description(content):
             clean_line = line.replace('**', '').replace('__', '')
             clean_line = clean_text(clean_line)
             if not any(b in clean_line.lower() for b in blacklist):
-                return clean_line[:200] + "..." if len(clean_line) > 200 else clean_line
+                preview = clean_line[:200] + "..." if len(clean_line) > 200 else clean_line
+                if is_description_useful(preview):
+                    return preview
             
     return "No description available."
 
