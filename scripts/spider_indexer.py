@@ -37,27 +37,30 @@ def generate_keywords(path, content=""):
     return " ".join(keywords)
 
 def extract_description(content):
-    # Try to find "When to Use" or "Description" headers
-    match = re.search(r'##\s*(?:When to Use|Description|Overview)\s*(.*?)(?=\n##|\Z)', content, re.IGNORECASE | re.DOTALL)
+    # Try to find specific descriptive headers
+    match = re.search(r'#+\s*(?:When to Use|When to reach for it|What it does|Description|Overview|About|Summary)\s*(.*?)(?=\n#|\Z)', content, re.IGNORECASE | re.DOTALL)
     if match:
         desc = match.group(1).strip()
-        # Take the first paragraph
-        return desc.split('\n\n')[0].replace('\n', ' ')
+        if len(desc) > 10:
+            return desc.split('\n\n')[0].replace('\n', ' ')
     
     # Try YAML frontmatter
     match = re.search(r'^---\s*\n(.*?)\n---\s*\n', content, re.DOTALL)
     if match:
         yaml_content = match.group(1)
         desc_match = re.search(r'description:\s*["\']?(.*?)["\']?$', yaml_content, re.IGNORECASE | re.MULTILINE)
-        if desc_match:
+        if desc_match and len(desc_match.group(1).strip()) > 5:
             return desc_match.group(1).strip()
             
-    # Fallback to first non-empty line that isn't a header
+    # Fallback to first non-empty paragraph that has some substance
     lines = content.split('\n')
-    for line in lines:
+    for i, line in enumerate(lines):
         line = line.strip()
-        if line and not line.startswith('#') and not line.startswith('!['):
-            return line[:200] + "..." if len(line) > 200 else line
+        # Skip headers, images, html tags, and very short lines like "**Quickstart:**"
+        if line and not line.startswith('#') and not line.startswith('![') and not line.startswith('<') and len(re.sub(r'[^a-zA-Z]', '', line)) > 15:
+            # Clean up bolding/italics for the preview
+            clean_line = line.replace('**', '').replace('__', '')
+            return clean_line[:200] + "..." if len(clean_line) > 200 else clean_line
             
     return "No description available."
 
