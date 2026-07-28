@@ -115,3 +115,27 @@ The Architect, after the Triage interview, identifies which of these Archetypes 
   - `Weather API MCP Server`
 - **Skill Discovery Tags (Dynamic Tool Search)**:
   - `Tags to search`: `#tool:api`, `#tool:extraction`, `#workflow:refinement`
+
+## Archetype 6: Career & Job Market Strategist
+- **Tag**: `#archetype:career_strategist`, `#purpose:recruiting`, `#domain:career`
+- **Objective**: Gestire la ricerca attiva di lavoro, lo scouting delle opportunità, la preparazione ai colloqui e il personal branding.
+- **Pipeline (ICM Folders)**:
+  - `0 - SYSTEM/`
+    - `0.1 - RULES/`
+    - `0.2 - SKILLS/`
+      - `tmp/`
+  - `1 - OPPORTUNITIES/` (Scouting offerte grezze e fit analysis)
+  - `2 - VALIDATED/` (Offerte su cui si procede attivamente)
+  - `3 - ANALYSIS/` (Analisi di mercato e delle aziende)
+  - `4 - APPLICATION/` (Materiali CV, Cover Letter, preparazione colloqui)
+- **Workflows (Generated Sub-Agents)**:
+  - **Job Scout**: Ricerca automatizzata di offerte, valutazione iniziale di fit (basato su gap analysis).
+  - **Company Analyst**: Studio profondo dell'azienda, bilanci, posizionamento.
+  - **Interview Coach**: Preparazione domande scomode, simulazione colloqui e pitch.
+  - **Brand Strategist**: Ottimizzazione LinkedIn e strategia di networking.
+- **Suggested Core Skills & Tools**:
+  - `linkedin-automation` (via Rube MCP / Composio per interagire stabilmente con LinkedIn)
+  - `linkedin-profile-optimizer`
+  - `AI Dev Jobs MCP server` (per scouting opportunità)
+- **Skill Discovery Tags (Dynamic Tool Search)**:
+  - `Tags to search`: `#linkedin`, `#recruiting`, `#career`, `#automation`
