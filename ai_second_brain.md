@@ -9,17 +9,17 @@
 ## 1. 🔍 Ingest & Research
 *Tools for web search, raw information extraction, and standardization into LLM-readable formats.*
 
-### Autonomous Research & Analytical Research (OSINT)
-- **[Agent Reach](https://github.com/Panniantong/Agent-Reach)** `#workflow:osint #role:data_gathering #archetype:intelligence`: Skill to give the agent "eyes" on the Internet (Twitter, Reddit, YouTube, GitHub) via CLI.
-- **[Last 30 Days Skill](https://github.com/mvanhorn/last30days-skill)** `#workflow:osint #role:data_gathering #archetype:intelligence`: Search engine driven by an AI agent that searches across people and engagement over the last 30 days.
-- **[GPT Researcher](https://github.com/assimp/gpt-researcher)** `#workflow:osint #role:data_gathering #archetype:intelligence`: Automates the "Plan → Search → Read → Reflect → Synthesize" cycle.
-- **[OWASP Social OSINT Agent](https://github.com/OWASP/SocialOSINTAgent)** `#workflow:osint #role:data_gathering #archetype:intelligence`: OSINT agent focused on social media, images, and text.
-- **[Perplexica](https://github.com/ItzCrazyKns/Perplexica)** `#workflow:osint #role:data_gathering #archetype:intelligence`: Privacy-focused AI search engine supporting local and cloud LLMs.
-- **[Brave Search MCP Server](https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search)** `#workflow:osint #role:data_gathering #archetype:intelligence`: MCP Server for parallel web search in full transparency.
-- **[Strix](https://github.com/strix-project)** `#workflow:osint #role:security #archetype:intelligence`: CLI utility per penetration testing e validazione OSINT autonoma eseguibile dall'Architetto.
-- **[OpenClaw / KiloClaw](https://github.com/OpenClaw/openclaw)** `#workflow:osint #archetype:integration`: Strumenti e fork "Plug & Play" per integrare OSINT, Discord, e Telegram nativamente nell'agente.
+### Autonomous Data Gathering & Research
+- **[Agent Reach](https://github.com/Panniantong/Agent-Reach)** `#workflow:research #role:data_gathering #archetype:analyst`: Skill to give the agent "eyes" on the Internet (Twitter, Reddit, YouTube, GitHub) via CLI.
+- **[Last 30 Days Skill](https://github.com/mvanhorn/last30days-skill)** `#workflow:research #role:data_gathering #archetype:analyst`: Search engine driven by an AI agent that searches across people and engagement over the last 30 days.
+- **[GPT Researcher](https://github.com/assimp/gpt-researcher)** `#workflow:research #role:data_gathering #archetype:analyst`: Automates the "Plan → Search → Read → Reflect → Synthesize" cycle.
+- **[OWASP Social OSINT Agent](https://github.com/OWASP/SocialOSINTAgent)** `#workflow:research #role:data_gathering #archetype:analyst`: Research agent focused on social media, images, and text.
+- **[Perplexica](https://github.com/ItzCrazyKns/Perplexica)** `#workflow:research #role:data_gathering #archetype:analyst`: Privacy-focused AI search engine supporting local and cloud LLMs.
+- **[Brave Search MCP Server](https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search)** `#workflow:research #role:data_gathering #archetype:analyst`: MCP Server for parallel web search in full transparency.
+- **[Strix](https://github.com/strix-project)** `#workflow:research #role:security #archetype:analyst`: CLI utility per validazione di sistema autonoma eseguibile dall'Architetto.
+- **[OpenClaw / KiloClaw](https://github.com/OpenClaw/openclaw)** `#workflow:research #archetype:integration`: Strumenti e fork "Plug & Play" per integrare ricerche avanzate, Discord, e Telegram nativamente nell'agente.
 - **[CyberScraper 2077](https://github.com/itsOwen/CyberScraper-2077)** `#tool:infrastructure #purpose:api`: Advanced web scraper con bypass Cloudflare, parsing HTML diretto per agenti.
-- **[OpenOSINT](https://github.com/OpenOSINT/OpenOSINT)** `#tool:utility #purpose:support`: Analytical Research (OSINT) tool alimentato da automazioni AI (Classic recon tools + LLM).
+- **[OpenOSINT](https://github.com/OpenOSINT/OpenOSINT)** `#tool:utility #purpose:support`: Analytical Research tool alimentato da automazioni AI (Classic tools + LLM).
 
 ### Data Extraction: PDF-to-Markdown Solutions
 - **[MinerU (by OpenDataLab)](https://github.com/opendatalab/MinerU)** `#workflow:raw_ingestion #tool:extraction`: Uses a vision-language model for unbeatable accuracy on complex layouts.
@@ -80,7 +80,7 @@
 ### Video Production & Editing
 - **[video-shotcraft (by Vincentwei1021)](https://github.com/Vincentwei1021/video-shotcraft)** `#workflow:production #tool:video`: Una skill di produzione video per Claude Code e Codex con template "production-ready" per creare cinematic product video usando Remotion.
 - **[ai-video-editor (by MartinDelophy)](https://github.com/MartinDelophy/ai-video-editor)** `#workflow:production #tool:video`: Video editor AI local-first, browser-based, con supporto ONNX, Whisper, e talking avatars.
-- **[FableCut](https://github.com/fablecut/fablecut)** `#tool:infrastructure`: Generazione video (JS editor) guidabile localmente via script per creare trailer di indagini OSINT.
+- **[FableCut](https://github.com/fablecut/fablecut)** `#tool:infrastructure`: Generazione video (JS editor) guidabile localmente via script per creare trailer di indagini e report.
 
 ---
 
@@ -90,7 +90,7 @@
 ### Standard MCP Servers
 - **[A2A Search MCP](https://github.com/tadas-github/a2asearch-mcp)** `#tool:mcp`: Il "Google degli agenti". L'agente può usarlo per trovare e autoinstallarsi nuovi MCP Server per compiti imprevisti.
 - **Context7 MCP** `#tool:mcp`: Per iniezione di documentazione in tempo reale e prevenzione allucinazioni.
-- **Playwright MCP** `#tool:mcp`: Per automazione web e visual debugging (perfetto per OSINT o QA).
+- **Playwright MCP** `#tool:mcp`: Per automazione web e visual debugging (perfetto per ricerche web o QA).
 - **Postgres MCP Pro / Supabase** `#tool:mcp`: Per accesso e analisi diretta di database SQL.
 - **GitHub MCP** `#tool:mcp`: Per gestione issue, PR e CI/CD.
 
@@ -103,4 +103,4 @@ L'intero ecosistema open-source di Skill e Server MCP è centralizzato e indiciz
 - **[Aict](https://github.com/aict-tools/aict)** `#tool:utility`: Unix coreutils native JSON/XML output. Elimina la necessità per l'agente di usare `sed/awk` su log complessi.
 - **[OmniRoute](https://github.com/diegosouzapw/OmniRoute)** `#tool:core`: Gateway to save tokens and route traffic.
 - **[Colibri](https://github.com/JustVugg/colibri)** `#tool:core`: Enables local execution of giant models (offline, max privacy).
-- **[VulnHunter](https://github.com/capitalone/vulnhunter)** `#tool:security`: Agentic security tool (Capital One). Passaci i framework OSINT sconosciuti prima di eseguirli in locale!
+- **[VulnHunter](https://github.com/capitalone/vulnhunter)** `#tool:security`: Agentic security tool (Capital One). Passaci i framework di terze parti sconosciuti prima di eseguirli in locale!

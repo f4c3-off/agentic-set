@@ -7,7 +7,7 @@
 ---
 
 ## 🗺️ Global Navigation Map
-Every file in this repository is not a simple list of links, but a **decision manual** indexed by tags (e.g., `#workflow:osint #domain:osint`). The Architect scans these files to inject intelligence into its sub-agents.
+Every file in this repository is not a simple list of links, but a **decision manual** indexed by tags (e.g., `#workflow:research #domain:analysis`). The Architect scans these files to inject advanced reasoning into its sub-agents.
 
 If you need:
 
@@ -15,7 +15,7 @@ If you need:
 - **🌐 Software Ecosystem & Frameworks** -> Read [software_ecosystem.md](./software_ecosystem.md). A directory of standalone frameworks, platforms, orchestrators, and token optimizers (STORM, Orca, Headroom).
 - **📝 Obsidian Plugins** -> Read [obsidian_plugins.md](./obsidian_plugins.md). Recommended plugins to structure the Second Brain and interface it with local LLMs.
 - **📚 Human Learning & Theory** -> Read [human_learning.md](./human_learning.md) and [the_architect_project_architecture_philosophy.md](./the_architect_project_architecture_philosophy.md). The theory behind Project SEED, the ICM methodology it incorporates, and system history.
-- **⚙️ Stack Configurations** -> Read [stack_configurations.md](./stack_configurations.md). The architectural blueprints (e.g., "Intelligence OS") used by The Architect to build folders.
+- **⚙️ Stack Configurations** -> Read [stack_configurations.md](./stack_configurations.md). The architectural blueprints (e.g., "Advanced Research OS") used by The Architect to build folders.
 - **🏗️ Templates (Role-Playing & Personas)** -> Explore the `/templates/` folder. You will find separate files (e.g., [The Explorer](./templates/esploratore.md), [The Reporter](./templates/reporter.md), [The Librarian](./templates/bibliotecario.md), [Sherman](./templates/sherman.md)). The Architect uses these files to inject Identity, Skills, and Folder Structure into sub-agents.
 - **📐 Standards** -> Read [knowledge_base_standards.md](./knowledge_base_standards.md). Writing standards like OKF and MoSS.
 
